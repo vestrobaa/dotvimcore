@@ -1,14 +1,17 @@
 ###VIM
 
-Configure my customized Vim installation. See [Vim][1]. 
+My [Vim][1] [configuration][5]
 
 ###Installation
 
-    git clone git@192.155.88.187:/opt/git/dotvimsmall.git ~/.vim
+    git clone git://github.com/vestrobaa/dotvimcore.git ~/.vim 
+
+###Configuration
+
     ln -s ~/.vim/vimrc ~/.vimrc
     ln -s ~/.vim/gvimrc ~/.gvimrc
 
-####Windows installation 
+###Windows configuration
 
     Configure environment variable home=%userprofile%
     git clone target: %userprofile%\.vim or %userprofile%\vimfiles
@@ -16,7 +19,7 @@ Configure my customized Vim installation. See [Vim][1].
     mklink /h _vimrc %userprofile%\.vim\vimrc
     mklink /h _gvimrc %userprofile%\.vim\gvimrc
 
-####Upgrade submodules
+###Install/upgrade plugins
 
     cd ~/.vim
     git submodule init
@@ -24,7 +27,7 @@ Configure my customized Vim installation. See [Vim][1].
     git submodule foreach git submodule init
     git submodule foreach git pull origin master
 
-####Manual installation steps
+###Optional plugin steps
 
 Browser markdown support
 
@@ -33,119 +36,35 @@ Browser markdown support
 - Markdown to html: Put [Markdown.pl][3] in the path or in /usr/local/bin
 
 
-
 ###Submodules installed
 
-Beware of too many or unsupported plugins. Most plugins replicate default Vim behaviour in non-Vim conventions. Yes, and TPope is the Vim plugin king.
+Beware of too many or unsupported plugins. Most plugins replicate default Vim behaviour in non-Vim conventions. Yes, and [Tim Pope][4] is the Vim plugin king.
 
-    # General
-
-    # Navigation
-    git submodule add https://github.com/kien/ctrlp.vim.git bundle/ctrlp
-    git submodule add git://github.com/Lokaltog/vim-easymotion.git bundle/easymotion
-
-    # Version Control
-    git submodule add http://github.com/tpope/vim-fugitive.git bundle/fugitive
-    git submodule add https://github.com/tpope/vim-git.git bundle/git
-    git submodule add https://github.com/sjl/gundo.vim.git bundle/gundo
-
-    # Python
-    git submodule add https://github.com/vim-scripts/pep8.git bundle/pep8
-    git submodule add https://github.com/scrooloose/syntastic.git bundle/syntastic
-
-    # Rails
-    git submodule add git://github.com/tpope/vim-rails.git bundle/rails
-
-    # SQL
-    git submodule add git://github.com/vim-scripts/dbext.vim.git bundle/dbext
-
-    # Code completion
-    git submodule add git://github.com/tpope/vim-markdown.git bundle/markdown
-
-    # Colors
-    git submodule add git://github.com/croaker/mustang-vim.git bundle/color-mustang
-    git submodule add git://github.com/Lokaltog/vim-distinguished.git bundle/color-distinguished
-
-###Submodules from the full version not installed
-
-    # Navigation
-    git submodule add git://github.com/vim-scripts/taglist.vim.git bundle/taglist
-    git submodule add https://github.com/sontek/minibufexpl.vim.git bundle/minibufexpl
-    git submodule add https://github.com/Lokaltog/powerline.git bundle/powerline    
-
-    # Version Control
-
-    # General
-    git submodule add git://github.com/duff/vim-scratch.git bundle/scratch
-    git submodule add https://github.com/reinh/vim-makegreen bundle/makegreen
-    git submodule add git://github.com/nielsadb/df_mode.vim.git bundle/distractionfree
-    git clone https://github.com/roman/golden-ratio.git bundle/golden-ration
-
-    # Python
-    git submodule add https://github.com/alfredodeza/pytest.vim.git bundle/py.test
-    git submodule add https://github.com/sontek/rope-vim.git bundle/ropevim
-    git submodule add https://github.com/fs111/pydoc.vim.git bundle/pydoc
-
-    # Rails
-
-    # SQL
-
-    # Code completion
-    git submodule add https://github.com/ervandew/supertab.git bundle/supertab
-    git submodule add https://github.com/msanders/jsnipmate.vim.git bundle/snipmate
-    git submodule add https://github.com/tpope/vim-surround.git bundle/surround
-    git submodule add https://github.com/rstacruz/sparkup.git bundle/sparkup
-
-    # Colors
-    git submodule add https://github.com/altercation/vim-colors-solarized.git bundle/solarized
-    git submodule add git://github.com/croaker/mustang-vim.git bundle/color-mustang
-    git submodule add git://github.com/Lokaltog/vim-distinguished.git bundle/color-distinguished
-    git submodule add git://github.com/nanotech/jellybeans.vim.git bundle/color-jellybean
-    git submodule add git://github.com/tpope/vim-vividchalk.git bundle/color-vividchalk
+1. General
+    - [CtrlP][20] fuzzy file finder
+    - [Easymotion][21] navigation
+1. Version Control
+    - [Git][30] [fugitive][31] plugin, [color][32]
+    - [Gundo][32] vim undo tree
+1. Languages
+    - [Markdown][40] [plugin][41], [color][42]
+    - Python [syntax][50], [style][51]
+    - [Ruby][60] on [Rails][61] [plugin][62]
+    - [SQL][70]
+1. Color schemes: [mustang][80], [distinguished][81]
 
 
-###Windows installation
+###Plugin removal process
 
-- Configure environment variable home=%userprofile%
-- git clone target: %userprofile%\.vim or %userprofile%\vimfiles
-- cp $userprofile%\.vim\gvimrc.sample %userprofile%\.vim\gvimrc
-- mklink /h _vimrc %userprofile%\.vim\vimrc
-- mklink /h _gvimrc %userprofile%\.vim\gvimrc
+    vim .git/config and remove the submodule lines
+    vim .gitmodules and remove the submudule lines
+    rm -rf .git/modules/bundle/x
+    git rm --cached bundle/x (no trailing slash, not the right spot in the sequence...)
+    rm -rf bundle/x
+    Commit
 
 
-###TODO
-
-1. Installation specific gvimrc. gvimrc settings for a good looking gvim is different on each computer
-1. Get an autogenerated markdown version of the settins and plugins for one stop documentation 
-1. Get standard tagging and ctags to work
-1. Git a git branch indicator
-1. Get standard spelling to work
-
-###Removed submodules
-
-...
-
-###Removal process: (Check for upstream deletes)
-
-    ~/.vim$ rm -rf bundle/nerdtree
-    #Remove the two related lines form the config file:
-    ~/.vim/.git$ vim config
-    ~/.vim$ git rm --cached bundle/nerdtree
-
-    # Updated version:
-    git config -f .git/config --remove-section "bundle/x"
-    git config -f .gitmodules --remove-section "bundle/x"
-    ~/.vim$ rm -rf bundle/x
-    ~/.vim$ git rm --cached bundle/x
-
-    # Added a git user alias for the above:
-    git rms bundle/x
-
-    Add the following in ~/.gitconfig:
-    [alias]
-    rms = "!f(){ git rm --cached \"$1\";rm -rf \"$1\";git config -f .gitmodules --remove-section \"submodule.$1\";git config -f .git/config --remove-section \"submodule.$1\";git add .gitmodules; }; f"
-
-###Usage
+###Plugin usage
 
 CtrlP fuzzy file search: `<c-p>`  
 Easymotion: `<leader><leader>movement`, `,,w`  
@@ -153,7 +72,7 @@ Markdown html expand: `<leader>md`
 Gundo file histroy: `<leader>g`  
 Taglist: `<leader>.`  
 Surround text:  
-   
+
     cs<from><to>, cs"', cst<to> - Change surrounding character, string or <tag> combination  
     ds" - Delete surrounding "  
     ysiw] - Yank and surround the inner word with ]. Use [{( or ]}) to unclude a space
@@ -168,6 +87,31 @@ DbExt:
     <leader>sl[t|v|p|c] - SQL list (t)able, (v)iew, (p)rocedure, (c)olumn
     <leader>sh - SQL history
 
+###TODO
+
+1. Installation specific gvimrc. gvimrc settings for a good looking gvim is different on each computer
+1. Get an autogenerated markdown version of the settins and plugins for one stop documentation 
+1. Get standard tagging and ctags to work
+1. Git a git branch indicator
+1. Get standard spelling to work
 [1]: http://www.vim.org/
+[5]: https://github.com/vestrobaa/dotvimcore
 [2]: https://chrome.google.com/webstore/detail/jmchmkecamhbiokiopfpnfgbidieafmd 
 [3]: http://daringfireball.net/projects/markdown/ 
+[4]: https://github.com/tpope
+
+[20]: https://github.com/kien/ctrlp.vim 
+[21]: https://github.com/Lokaltog/vim-easymotion
+[30]: http://http://git-scm.com/
+[31]: https://github.com/tpope/vim-fugitive
+[32]: https://github.com/tpope/vim-git
+[32]: https://github.com/sjl/gundo.vim
+[40]: http://daringfireball.net/projects/markdown/ 
+[41]: https://github.com/tpope/vim-markdown
+[42]: https://github.com/plasticboy/vim-markdown
+[50]: https://github.com/scrooloose/syntastic
+[51]: https://github.com/vim-scripts/pep8
+[62]: https://github.com/tpope/vim-rails
+[70]: https://github.com/vim-scripts/dbext.vim
+[80]: https://github.com/croaker/mustang-vim
+[81]: https://github.com/Lokaltog/vim-distinguished
