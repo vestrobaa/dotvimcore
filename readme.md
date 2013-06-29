@@ -51,7 +51,7 @@ I'm using the following Vim plugins. Yes, [Tim Pope][4] is the Vim plugin king.
 1. Languages
     - [Markdown][40] [plugin][41], [color][42]. Preview in [Chrome][2]
     - [Python][52] [syntax][50], [style][51]
-    - [Ruby][60] on [Rails][61] [plugin][62]
+    - [Ruby][60] on [Rails][61] [plugin][62]. Syntax helpers for [end][63] and [cucumber][64].
     - [SQL][70]
 
 
@@ -117,6 +117,8 @@ DbExt:
 [60]: http://www.ruby-lang.org
 [61]: http://rubyonrails.org
 [62]: https://github.com/tpope/vim-rails
+[63]: http://github.com/tpope/vim-endwise
+[64]: http://github.com/tpope/vim-cucumber
 [70]: https://github.com/vim-scripts/dbext.vim
 [80]: https://github.com/croaker/mustang-vim
 [81]: https://github.com/Lokaltog/vim-distinguished
