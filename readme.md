@@ -113,9 +113,9 @@ DbExt:
 [42]: https://github.com/plasticboy/vim-markdown
 [50]: https://github.com/scrooloose/syntastic
 [51]: https://github.com/vim-scripts/pep8
-[52]: http://http://www.python.org/
-[60]: http://http://www.ruby-lang.org
-[61]: http://http://rubyonrails.org
+[52]: http://www.python.org/
+[60]: http://www.ruby-lang.org
+[61]: http://rubyonrails.org
 [62]: https://github.com/tpope/vim-rails
 [70]: https://github.com/vim-scripts/dbext.vim
 [80]: https://github.com/croaker/mustang-vim
