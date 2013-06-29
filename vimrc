@@ -35,12 +35,6 @@ set smartcase                   " ... unless they contain at least one capital l
 set foldmethod=indent
 set foldlevel=99
 
-" Windows navigation - Bah, just use the default
-"map <c-j> <c-w>j                " Jump between windows using <c-> navigation key
-"map <c-k> <c-w>k
-"map <c-l> <c-w>l
-"map <c-h> <c-w>h
-
 " File, backup and undo
 set noswapfile
 set nobackup
@@ -71,12 +65,12 @@ let mapleader = ","
 let g:mapleader = ","
 
 " Custom
-:inoremap jk <esc>                      " Exit insert mode with jk instead of <esc>
+:inoremap jk <esc>
 :inoremap <esc> <nop>
-map <Left> :echo 'left<<'<cr>           " Navigation using arrow keys
-map <Right> :echo 'right>>'<cr>
-map <Up> :echo 'up^^'<cr>
-map <Down> :echo 'down__'<cr>
+map <Left> :echo '<<<<'<cr>
+map <Right> :echo '>>>>'<cr>
+map <Up> :echo '^^^^'<cr>
+map <Down> :echo '____'<cr>
 
 " Testing
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
