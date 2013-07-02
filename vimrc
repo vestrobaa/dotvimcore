@@ -18,6 +18,7 @@ set textwidth=0                 " No annoying word wrapping
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 set list                        " Show non-space whitespaces with set list!
 set smarttab                    " Be smart when using tabs
+set t_Co=256
 
 " Whitespace
 set nowrap                      " Don't wrap lines
@@ -57,23 +58,27 @@ endif
 
 " Pathogen plugin isolation
 filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
+"call pathogen#runtime_append_all_bundles()
+"call pathogen#helptags()
 
-" Set Mapleader
+""""""""""""""""""""""""""""""""""""""""""
+" Custom settings
+""""""""""""""""""""""""""""""""""""""""""
 let mapleader = ","
 let g:mapleader = ","
-
-" Custom
 :inoremap jk <esc>
 :inoremap <esc> <nop>
-map <Left> :echo '<<<<'<cr>
-map <Right> :echo '>>>>'<cr>
-map <Up> :echo '^^^^'<cr>
-map <Down> :echo '____'<cr>
+map <Left> :echo '<<<'<cr>
+map <Right> :echo '>>>'<cr>
+map <Up> :echo '^^^'<cr>
+map <Down> :echo '___'<cr>
 
 " Testing
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+colorscheme distinguished
 
 """"""""""""""""""""""""""""""""""""""""""
 " Plugin hotkeys
@@ -82,20 +87,22 @@ map <leader>g :GundoToggle<cr>
 let g:pep8_map='<leader>8'             " sudo pip install pep8
 nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags<cr> 
 
+""""""""""""""""""""""""""""""""""""""""""
+" Filetype handling
+""""""""""""""""""""""""""""""""""""""""""
 autocmd FileType python set sw=4 sts=4 omnifunc=pythoncomplete#Complete
 autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber set ai sw=2 sts=2
+autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 "autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 "autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
-set t_Co=256                    "Theme for terminal vim
-colorscheme distinguished
-
-if has("autocmd")
-    filetype plugin indent on
-endif
+highlight Pmenu ctermbg=238 gui=bold
 
 """"""""""""""""""""""""""""""""""""""""""
 " Database connections
