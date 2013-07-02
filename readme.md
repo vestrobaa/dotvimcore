@@ -54,6 +54,13 @@ I'm using the following Vim plugins. Yes, [Tim Pope][4] is the Vim plugin king.
     - [Ruby][60] on [Rails][61] [plugin][62]. Syntax helpers for [end][63] and [cucumber][64].
     - [SQL][70]
 
+###Plugin install process with ~/.vim in Git
+
+    cd ~/.vim
+    git submodule init
+    git submodule add git://whatever.git bundle/whatever
+    git commit -m 'Added submodule whatever'
+    git push
 
 ###Plugin removal process
 
