@@ -40,6 +40,7 @@ I'm using the following Vim plugins. Yes, [Tim Pope][4] is the Vim plugin king.
     - [CtrlP][20] fuzzy file finder
     - [Easymotion][21] navigation
     - [Mustang][80], [distinguished][81] color schemes
+    - [Surround][82] text tagging
 1. Version Control
     - [Git][30] [fugitive][31] plugin, [color][32]
     - [Gundo][32] vim undo tree
@@ -136,4 +137,5 @@ Code completion `<c-x><c-]>`
 [70]: https://github.com/vim-scripts/dbext.vim
 [80]: https://github.com/croaker/mustang-vim
 [81]: https://github.com/Lokaltog/vim-distinguished
+[82]: https://github.com/tpope/vim-surround.git
 [90]: http://ctags.sourceforge.net
