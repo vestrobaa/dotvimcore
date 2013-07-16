@@ -53,3 +53,32 @@ Just comments, need to work out the taggins system
 tbd
 
 
+##Debugging
+
+:verbose set foldmethod
+:scriptnames
+
+Override path to vimrc and gvimrc
+vim -u NONE -U NONE
+Now source individual plugins
+:so plugin/fugitive.vim
+
+Get a startup log
+vim +q --startuptime startuptime.txt
+
+Check features
+if has("spell")
+    nnoremap <leader>s :set spell!<CR>
+endif
+
+Check an option
+if exists("&foldenable")
+    set foldenable
+endif
+
+Check special features
+if has("unix")
+    set guifont=Inconsolata\ 14
+else
+    set guifont=Consolas:h12
+endif
