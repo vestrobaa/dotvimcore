@@ -106,8 +106,11 @@ highlight Pmenu ctermbg=238 gui=bold
 
 """"""""""""""""""""""""""""""""""""""""""
 " Database connections
+" Add environment specific database to ~/.vimdb.local
 """"""""""""""""""""""""""""""""""""""""""
 let g:dbext_default_profile_django_book = 'type=MYSQL:user=WebDevUser:passwd=WebDevUser:dbname=WebDev:extra=-t'
 let g:dbext_default_profile_mysql_test = 'type=MYSQL:user=WebDevUser:passwd=WebDevUser:dbname=test:extra=-t'
 let g:dbext_default_profile_sqlexpress = 'type=SQLSRV:integratedLogin=1:dbname=AdventureWorks:extra=-t'
-
+if filereadable(glob("~/.vimdb.local"))
+    source ~/.vimdb.local
+endif
