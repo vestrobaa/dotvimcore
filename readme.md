@@ -91,6 +91,7 @@ Surround text:
 
 DbExt:
 
+    :DBPromptForBufferParameters - Connect to the database
     <leader>se[ |l] - SQL execute ( )visual selection, (l)ine, 
     <leader>s[t|T|w|a] - SQL select from (t)able, (T)op from table, from table (w)here, from <(a)sk table name>
     <leader>sd[t|v|p] - SQL describe (t)able, (v)iew, (p)rocedure
