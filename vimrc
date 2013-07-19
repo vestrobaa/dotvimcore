@@ -33,8 +33,7 @@ set ignorecase                  " Searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 
 " Text folding                  " :help fold-commands 
-set foldmethod=indent
-set foldlevel=99
+set foldmethod=syntax
 
 " File, backup and undo
 set noswapfile
