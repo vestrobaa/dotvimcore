@@ -50,7 +50,7 @@ I'm using the following Vim plugins. Yes, [Tim Pope][4] is the Vim plugin king.
     - [Ruby][60] on [Rails][61] [plugin][62]. Syntax helpers for [end][63] and [cucumber][64].
     - [SQL][70]
 1. External tools
-    - [Exurberant Ctags][90]
+    - [Exuberant Ctags][90]
     - Markdown to html: Put [Markdown.pl][3] in the path or in /usr/local/bin
 
 
@@ -91,13 +91,14 @@ Surround text:
 
 DbExt:
 
+    :DBPromptForBufferParameters - Connect to the database
     <leader>se[ |l] - SQL execute ( )visual selection, (l)ine, 
     <leader>s[t|T|w|a] - SQL select from (t)able, (T)op from table, from table (w)here, from <(a)sk table name>
     <leader>sd[t|v|p] - SQL describe (t)able, (v)iew, (p)rocedure
     <leader>sl[t|v|p|c] - SQL list (t)able, (v)iew, (p)rocedure, (c)olumn
     <leader>sh - SQL history
 
-Exurberant Ctags:
+Exuberant Ctags:
 
 Generate tags   `ctags -R .`  
 Jump to a tag   `<c-]>` or back `<c-t>`  

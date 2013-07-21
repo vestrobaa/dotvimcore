@@ -33,8 +33,7 @@ set ignorecase                  " Searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 
 " Text folding                  " :help fold-commands 
-set foldmethod=indent
-set foldlevel=99
+set foldmethod=syntax
 
 " File, backup and undo
 set noswapfile
@@ -110,7 +109,8 @@ highlight Pmenu ctermbg=238 gui=bold
 """"""""""""""""""""""""""""""""""""""""""
 let g:dbext_default_profile_django_book = 'type=MYSQL:user=WebDevUser:passwd=WebDevUser:dbname=WebDev:extra=-t'
 let g:dbext_default_profile_mysql_test = 'type=MYSQL:user=WebDevUser:passwd=WebDevUser:dbname=test:extra=-t'
-let g:dbext_default_profile_sqlexpress = 'type=SQLSRV:integratedLogin=1:dbname=AdventureWorks:extra=-t'
+let g:dbext_default_profile_sqlexpress = 'type=SQLSRV:integratedLogin=1:srvname=<see Connection Properties, Server Name>:dbname=AdventureWorks:extra=-t'
 if filereadable(glob("~/.vimdb.local"))
+    " Add this file to a security repository
     source ~/.vimdb.local
 endif
