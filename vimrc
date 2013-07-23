@@ -7,7 +7,9 @@ set encoding=utf-8
 set showcmd                     " Display incomplete commands
 filetype plugin indent on       " Load file type plugins + indentation
 
-set scrolloff=7                 " Set 7 lines to the cursor. Try 999 to keep cursor in the middle of the screen.
+set scrolloff=10                " Scroll when 10 lines from top/bottom
+set sidescrolloff=10            " Scroll when 10 columns from left/right
+
 set number                      " Line numbers in the left margin. Hide with set number!
 set ruler                       " Show cursor coordinates
 set autoread
