@@ -1,6 +1,8 @@
-""""""""""""""""""""""""""""""""""""""""""
-" General settings
-""""""""""""""""""""""""""""""""""""""""""
+" ~/.vimr
+" vim:set ft=vim tw=78 sw=2 foldmethod=marker:
+
+" General {{{1
+
 set nocompatible                " Choose no compatibility with legacy vi
 syntax enable                   " <enable> use color scheme, <on> overrides with default colors
 set encoding=utf-8
@@ -65,9 +67,9 @@ filetype plugin indent on
 "call pathogen#runtime_append_all_bundles()
 "call pathogen#helptags()
 
-""""""""""""""""""""""""""""""""""""""""""
-" Custom settings
-""""""""""""""""""""""""""""""""""""""""""
+
+" Custom {{{1
+
 let mapleader = ","
 let g:mapleader = ","
 :inoremap jk <esc>
@@ -81,16 +83,16 @@ map <Down> :echo '___'<cr>
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 colorscheme distinguished
 
-""""""""""""""""""""""""""""""""""""""""""
-" Plugin hotkeys
-""""""""""""""""""""""""""""""""""""""""""
+
+" Plugin hotkeys {{{1
+
 map <leader>g :GundoToggle<cr>
 let g:pep8_map='<leader>8'             " sudo pip install pep8
 nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags<cr> 
 
-""""""""""""""""""""""""""""""""""""""""""
-" Filetype handling
-""""""""""""""""""""""""""""""""""""""""""
+
+" Filetype handling {{{1
+
 autocmd FileType python set sw=4 sts=4 omnifunc=pythoncomplete#Complete
 autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber set ai sw=2 sts=2
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
@@ -105,10 +107,10 @@ autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
 highlight Pmenu ctermbg=238 gui=bold
 
-""""""""""""""""""""""""""""""""""""""""""
-" Database connections
+
+" Database connections {{{1
 " Add environment specific database to ~/.vimdb.local
-""""""""""""""""""""""""""""""""""""""""""
+
 let g:dbext_default_profile_django_book = 'type=MYSQL:user=WebDevUser:passwd=WebDevUser:dbname=WebDev:extra=-t'
 let g:dbext_default_profile_mysql_test = 'type=MYSQL:user=WebDevUser:passwd=WebDevUser:dbname=test:extra=-t'
 let g:dbext_default_profile_sqlexpress = 'type=SQLSRV:integratedLogin=1:srvname=<see Connection Properties, Server Name>:dbname=AdventureWorks:extra=-t'
