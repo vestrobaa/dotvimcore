@@ -43,3 +43,24 @@
 [submodule "bundle/color-molokai"]
 	path = bundle/color-molokai
 	url = https://github.com/tomasr/molokai.git
+[submodule "bundle\\twitter-open-browser"]
+	path = bundle\\twitter-open-browser
+	url = https://github.com/tyru/open-browser.vim.git
+[submodule "bundle\\twitter-twibill"]
+	path = bundle\\twitter-twibill
+	url = https://github.com/basyura/twibill.vim.git
+[submodule "bundle\\twitter-webapi"]
+	path = bundle\\twitter-webapi
+	url = https://github.com/mattn/webapi-vim.git
+[submodule "bundle\\twitter-unite"]
+	path = bundle\\twitter-unite
+	url = https://github.com/Shougo/unite.vim.git
+[submodule "bundle\\twitter-favstar"]
+	path = bundle\\twitter-favstar
+	url = https://github.com/mattn/favstar-vim.git
+[submodule "bundle\\twitter-tweet"]
+	path = bundle\\twitter-tweet
+	url = https://github.com/basyura/TweetVim.git
+[submodule "bundle\\twitter-bitly"]
+	path = bundle\\twitter-bitly
+	url = https://github.com/basyura/bitly.vim.git
