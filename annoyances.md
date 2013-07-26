@@ -6,3 +6,4 @@
 1. Figure out how to do pan instead of movement. 
     -   Example: <C-j> will keep the cursor where it is, but scroll the page up (instead of the cursor down)
 1. Get a good focus writer
+1. Where's my cursor?! 
