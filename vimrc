@@ -90,6 +90,13 @@ map <leader>g :GundoToggle<cr>
 let g:pep8_map='<leader>8'             " sudo pip install pep8
 nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags<cr> 
 
+" TweetVim 
+
+
+nnoremap <silent> s  :<C-u>TweetVimSay<CR>
+nnoremap <silent> t  :TweetVimHomeTimeline<CR>
+nnoremap <silent> tm :TweetVimMentions<CR>
+
 
 " Filetype handling {{{1
 
