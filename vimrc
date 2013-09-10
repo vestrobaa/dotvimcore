@@ -14,6 +14,7 @@ set sidescrolloff=10            " Scroll when 10 columns from left/right
 
 set number                      " Line numbers in the left margin. Hide with set number!
 set ruler                       " Show cursor coordinates
+set cursorline                  " Highlight the cursor line
 set autoread
 set hidden
 set smartindent
