@@ -82,7 +82,8 @@ map <Down> :echo '___'<cr>
 
 " Testing
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
-colorscheme distinguished
+"colorscheme distinguished
+colorscheme molokai
 
 
 " Plugin hotkeys {{{1
