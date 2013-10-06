@@ -17,3 +17,13 @@ if exists('*HexHighlight()')
   nmap <leader>h :call HexHighlight()<Return>
 endif
 
+
+" seoul256: 
+"   Range:   233 (darkest) ~ 239 (lightest) 
+" let g:seoul256_background = 233 
+" colo seoul256 
+
+" seoul256-light: 
+"   Range:   252 (darkest) ~ 256 (lightest) 
+let g:seoul256_background = 256 
+colo seoul256-light 
