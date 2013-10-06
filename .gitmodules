@@ -64,3 +64,6 @@
 [submodule "bundle/twitter-bitly"]
 	path = bundle/twitter-bitly
 	url = https://github.com/basyura/bitly.vim.git
+[submodule "bundle/color-seoul256"]
+	path = bundle/color-seoul256
+	url = https://github.com/junegunn/seoul256.vim.git
