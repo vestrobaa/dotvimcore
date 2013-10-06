@@ -84,6 +84,7 @@ map <Down> :echo '___'<cr>
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 "colorscheme distinguished
 colorscheme molokai
+map <leader>fx :1,%s/>\s*</>\r</g<CR>gg=G
 
 
 " Plugin hotkeys {{{1
