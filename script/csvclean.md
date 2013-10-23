@@ -28,6 +28,13 @@ Lines not starting with a "
 
 Note the g (globally) is not necessary in this case
 
-###Macro version
+### Macro version
 
 nmap <leader>csv :%s/\s\+$//g<cr>:%le<cr>:4,$ v/^"/normal kA jkJ/g<cr>
+
+
+### Drop the last 4 columns
+
+Drop the last 4 columns if they contain audit info
+
+    g/.*,.*,.*,.*,/normal A jk4F,d$jk0
