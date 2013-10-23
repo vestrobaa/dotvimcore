@@ -92,6 +92,7 @@ colorscheme molokai
 map <leader>g :GundoToggle<cr>
 let g:pep8_map='<leader>8'             " sudo pip install pep8
 nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags<cr> 
+nmap <leader>csv :%s/\s\+$//g<cr>:%le<cr>:4,$ v/^"/normal kA jkJ/g<cr>
 
 " TweetVim 
 
