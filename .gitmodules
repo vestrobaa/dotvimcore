@@ -76,6 +76,3 @@
 [submodule "bundle/syntax-csv"]
 	path = bundle/syntax-csv
 	url = https://github.com/vim-scripts/csv.vim.git
-[submodule "bundle/syntax-otmlog"]
-	path = bundle/syntax-otmlog
-	url = https://github.com/vestrobaa/vim-otmlog.git
