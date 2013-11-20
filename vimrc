@@ -94,6 +94,12 @@ let g:pep8_map='<leader>8'             " sudo pip install pep8
 nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags<cr> 
 nmap <leader>csv :%s/\s\+$//g<cr>:%le<cr>:4,$ v/^"/normal kA jkJ/g<cr>
 
+" csv
+
+let g:csv_nomap_j = 1
+let g:csv_nomap_k = 1
+let g:csv_nomap_cr = 1
+
 " TweetVim 
 
 
