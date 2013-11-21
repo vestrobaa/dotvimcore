@@ -43,9 +43,6 @@
 [submodule "bundle/color-molokai"]
 	path = bundle/color-molokai
 	url = https://github.com/tomasr/molokai.git
-[submodule "bundle\twitter-open-browser"]
-	path = bundle/twitter-open-browser
-	url = https://github.com/tyru/open-browser.vim.git
 [submodule "bundle/twitter-twibill"]
 	path = bundle/twitter-twibill
 	url = https://github.com/basyura/twibill.vim.git
@@ -94,3 +91,6 @@
 [submodule "bundle/color-base16-atelierdune"]
 	path = bundle/color-base16-atelierdune
 	url = https://github.com/vim-scripts/AtelierDune.git
+[submodule "bundle/twitter-open-browser"]
+	path = bundle/twitter-open-browser
+	url = https://github.com/tyru/open-browser.vim.git
