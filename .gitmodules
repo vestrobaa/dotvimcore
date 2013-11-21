@@ -82,3 +82,15 @@
 [submodule "bundle/syntax-hexHighlight"]
 	path = bundle/syntax-hexHighlight
 	url = https://github.com/vim-scripts/hexHighlight.vim.git
+[submodule "bundle/color-zenburn"]
+	path = bundle/color-zenburn
+	url = https://github.com/vim-scripts/Zenburn.git
+[submodule "bundle/color-playroom"]
+	path = bundle/color-playroom
+	url = https://github.com/vim-scripts/playroom.git
+[submodule "bundle/color-pyte"]
+	path = bundle/color-pyte
+	url = https://github.com/vim-scripts/pyte.git
+[submodule "bundle/color-base16-atelierdune"]
+	path = bundle/color-base16-atelierdune
+	url = https://github.com/vim-scripts/AtelierDune.git
