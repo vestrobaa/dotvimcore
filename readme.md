@@ -29,18 +29,20 @@ To install on Windows:
 Or upgrade to the latest version of each
 
     git submodule foreach git submodule init
+    git submodule foreach git submodule update
     git submodule foreach git pull origin master
 
 
 ###Vim Plugins
 
-I'm using the following Vim plugins. Yes, [Tim Pope][4] is the Vim plugin king.
+I'm using the following Vim plugins:
 
 1. General
     - [CtrlP][20] fuzzy file finder
-    - [Easymotion][21] navigation
+    - [Unimpaired][22] [easymotion][21] navigation
     - [Mustang][80], [distinguished][81] color schemes
     - [Surround][82] text tagging
+    - Must have [Twitter][83]!
 1. Version Control
     - [Git][30] [fugitive][31] plugin, [color][32]
     - [Gundo][32] vim undo tree
@@ -120,6 +122,7 @@ Code completion `<c-x><c-]>`
 [6]: http://github.com
 [20]: https://github.com/kien/ctrlp.vim 
 [21]: https://github.com/Lokaltog/vim-easymotion
+[22]: https://github.com/tpope/vim-unimpaired
 [30]: http://http://git-scm.com/
 [31]: https://github.com/tpope/vim-fugitive
 [32]: https://github.com/tpope/vim-git
@@ -139,4 +142,5 @@ Code completion `<c-x><c-]>`
 [80]: https://github.com/croaker/mustang-vim
 [81]: https://github.com/Lokaltog/vim-distinguished
 [82]: https://github.com/tpope/vim-surround.git
+[83]: https://github.com/basyura/TweetVim
 [90]: http://ctags.sourceforge.net

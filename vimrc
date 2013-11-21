@@ -1,13 +1,20 @@
 " ~/.vimr
 " vim:set ft=vim tw=78 sw=2 foldmethod=marker:
 
+
+" Pathogen {{{1
+filetype off
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
+
+
 " General {{{1
 
 set nocompatible                " Choose no compatibility with legacy vi
 syntax enable                   " <enable> use color scheme, <on> overrides with default colors
 set encoding=utf-8
 set showcmd                     " Display incomplete commands
-filetype plugin indent on       " Load file type plugins + indentation
 
 set scrolloff=10                " Scroll when 10 lines from top/bottom
 set sidescrolloff=10            " Scroll when 10 columns from left/right
@@ -51,7 +58,7 @@ set softtabstop=4
 " Cross platform support - http://stackoverflow.com/questions/10612362/setting-up-gvim-on-windows
 scriptencoding utf-8
 let g:my_vim_dir=expand("$HOME/.vim")
-if has("win16") || has("win32") || has("win64")
+if has("win32") || has("win64")
   execute "set rtp^=".g:my_vim_dir
   execute "set rtp+=".g:my_vim_dir."\\after"
   let &rtp=substitute(&rtp,"[/]","\\","g")
@@ -59,15 +66,6 @@ if has("win16") || has("win32") || has("win64")
     set shell=$COMSPEC " sets shell to correct path for cmd.exe
   endif
 endif
-
-" Pathogen plugin isolation
-filetype off
-execute pathogen#infect()
-syntax on
-filetype plugin indent on
-"call pathogen#runtime_append_all_bundles()
-"call pathogen#helptags()
-
 
 " Custom {{{1
 
@@ -83,24 +81,22 @@ map <Down> :echo '___'<cr>
 " Testing
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 map <leader>fx :1,%s/>\s*</>\r</g<CR>gg=G
-"colorscheme distinguished
 colorscheme molokai
 
 
 " Plugin hotkeys {{{1
 
 map <leader>g :GundoToggle<cr>
-let g:pep8_map='<leader>8'             " sudo pip install pep8
 nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags<cr> 
 nmap <leader>csv :%s/\s\+$//g<cr>:%le<cr>:4,$ v/^"/normal kA jkJ/g<cr>
 
-" csv
+" csv {{{2
 
 let g:csv_nomap_j = 1
 let g:csv_nomap_k = 1
 let g:csv_nomap_cr = 1
 
-" TweetVim 
+" TweetVim  {{{2
 
 
 nnoremap <silent> s  :<C-u>TweetVimSay<CR>
@@ -116,8 +112,6 @@ autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-"autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-"autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
