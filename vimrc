@@ -20,6 +20,7 @@ set scrolloff=10                " Scroll when 10 lines from top/bottom
 set sidescrolloff=10            " Scroll when 10 columns from left/right
 
 set number                      " Line numbers in the left margin. Hide with set number!
+set relativenumber              " Relative numbering
 set ruler                       " Show cursor coordinates
 set cursorline                  " Highlight the cursor line
 set autoread
@@ -35,6 +36,7 @@ set t_Co=256
 " Whitespace
 set nowrap                      " Don't wrap lines
 set tabstop=4 shiftwidth=4      " A tab is two spaces (or set this to 4)
+set softtabstop=4
 set expandtab                   " Use spaces, not tabs (optional)
 set backspace=indent,eol,start ",2  " Backspace through everything in insert mode
 
@@ -52,7 +54,6 @@ set noswapfile
 set nobackup
 set nowritebackup
 set autoindent
-set softtabstop=4
 
 
 " Cross platform support - http://stackoverflow.com/questions/10612362/setting-up-gvim-on-windows
@@ -71,16 +72,19 @@ endif
 
 let mapleader = ","
 let g:mapleader = ","
-:inoremap jk <esc>
-:inoremap <esc> <nop>
+inoremap jk <esc>
+inoremap <esc> <nop>
 map <Left> :echo '<<<'<cr>
 map <Right> :echo '>>>'<cr>
 map <Up> :echo '^^^'<cr>
 map <Down> :echo '___'<cr>
+nmap <leader>csv :%s/\s\+$//g<cr>:%le<cr>:4,$ v/^"/normal kA jkJ/g<cr>
 
 " Testing
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 map <leader>fx :1,%s/>\s*</>\r</g<CR>gg=G
+highlight Pmenu ctermbg=238 gui=bold
+
 colorscheme molokai
 
 
@@ -88,7 +92,6 @@ colorscheme molokai
 
 map <leader>g :GundoToggle<cr>
 nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags<cr> 
-nmap <leader>csv :%s/\s\+$//g<cr>:%le<cr>:4,$ v/^"/normal kA jkJ/g<cr>
 
 " csv {{{2
 
@@ -115,8 +118,6 @@ autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-
-highlight Pmenu ctermbg=238 gui=bold
 
 
 " Database connections {{{1
