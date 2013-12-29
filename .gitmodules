@@ -94,3 +94,6 @@
 [submodule "bundle/twitter-open-browser"]
 	path = bundle/twitter-open-browser
 	url = https://github.com/tyru/open-browser.vim.git
+[submodule "bundle/focus-goyo"]
+	path = bundle/focus-goyo
+	url = https://github.com/junegunn/goyo.vim.git
