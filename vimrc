@@ -21,7 +21,6 @@ set sidescrolloff=10            " Scroll when 10 columns from left/right
 
 set number                      " Line numbers in the left margin. Hide with set number!
 set relativenumber              " Relative numbering
-set ruler                       " Show cursor coordinates
 set cursorline                  " Highlight the cursor line
 set autoread
 set hidden
@@ -38,7 +37,7 @@ set nowrap                      " Don't wrap lines
 set tabstop=4 shiftwidth=4      " A tab is two spaces (or set this to 4)
 set softtabstop=4
 set expandtab                   " Use spaces, not tabs (optional)
-set backspace=indent,eol,start ",2  " Backspace through everything in insert mode
+set backspace=2
 
 " Searching
 set hlsearch                    " Highlight matches
@@ -78,11 +77,17 @@ map <Left> :echo '<<<'<cr>
 map <Right> :echo '>>>'<cr>
 map <Up> :echo '^^^'<cr>
 map <Down> :echo '___'<cr>
-nmap <leader>csv :%s/\s\+$//g<cr>:%le<cr>:4,$ v/^"/normal kA jkJ/g<cr>
 
 " Testing
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+set statusline=%<%f\ %h%m%r%q\ %{fugitive#statusline()}%=\ char(%b,0x%B)\ %l,%v\ [%p%%]b%n
+set laststatus=2            " Always put a status line in, even if only one window
+set ch=2                    " Command line height
+set guioptions=cg           " was egmLt
+set virtualedit=all         " move over imaginary spaces on empty lines
+set wildmenu
 map <leader>fx :1,%s/>\s*</>\r</g<CR>gg=G
+nmap <leader>csv :%s/\s\+$//g<cr>:%le<cr>:4,$ v/^"/normal kA jkJ/g<cr>
+
 highlight Pmenu ctermbg=238 gui=bold
 
 colorscheme molokai
