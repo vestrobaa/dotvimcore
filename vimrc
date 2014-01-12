@@ -19,14 +19,13 @@ set showcmd                     " Display incomplete commands
 set scrolloff=10                " Scroll when 10 lines from top/bottom
 set sidescrolloff=10            " Scroll when 10 columns from left/right
 
-set number                      " Line numbers in the left margin. Hide with set number!
 set relativenumber              " Relative numbering
 set cursorline                  " Highlight the cursor line
 set autoread
 set hidden
 set smartindent
 set vb t_vb="
-set textwidth=0                 " No annoying word wrapping
+set textwidth=78
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 set list                        " Show non-space whitespaces with set list!
 set smarttab                    " Be smart when using tabs
@@ -85,9 +84,25 @@ set ch=2                    " Command line height
 set guioptions=cg           " was egmLt
 set virtualedit=all         " move over imaginary spaces on empty lines
 set wildmenu
-map <leader>fx :1,%s/>\s*</>\r</g<CR>gg=G
+
+" Fix XML (pretty print)
+map <leader>fx :1,%s/>\s*</>\r</g<cr>gg=G
+
+" Fix SQL (wtf, where's the macro!?)
+
+" Trim last 4 columns in a CSV file
 nmap <leader>csv :%s/\s\+$//g<cr>:%le<cr>:4,$ v/^"/normal kA jkJ/g<cr>
 
+" Change directory to that of the current file
+nmap <silent><Leader>cd :lcd %:h<cr>:pwd<cr>
+
+" Fullscreen on Windows. Yay!
+nmap <silent><F11> :call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<cr>
+
+" Insert file name
+imap <Leader>fn <c-r>=expand('%:t:r')<cr>
+
+" Not used
 highlight Pmenu ctermbg=238 gui=bold
 
 colorscheme molokai
@@ -107,9 +122,9 @@ let g:csv_nomap_cr = 1
 " TweetVim  {{{2
 
 
-nnoremap <silent> s  :<C-u>TweetVimSay<CR>
-nnoremap <silent> t  :TweetVimHomeTimeline<CR>
-nnoremap <silent> tm :TweetVimMentions<CR>
+nnoremap <silent> s  :<C-u>TweetVimSay<cr>
+nnoremap <silent> t  :TweetVimHomeTimeline<cr>
+nnoremap <silent> tm :TweetVimMentions<cr>
 
 
 " Filetype handling {{{1

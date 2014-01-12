@@ -97,3 +97,6 @@
 [submodule "bundle/focus-goyo"]
 	path = bundle/focus-goyo
 	url = https://github.com/junegunn/goyo.vim.git
+[submodule "bundle/focus-fullscreen"]
+	path = bundle/focus-fullscreen
+	url = https://github.com/derekmcloughlin/gvimfullscreen_win32.git
