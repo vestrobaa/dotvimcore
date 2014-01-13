@@ -3,7 +3,8 @@
 
 
 " Pathogen {{{1
-filetype off
+set nocompatible
+set runtimepath+=~/.vim
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
@@ -19,6 +20,7 @@ set showcmd                     " Display incomplete commands
 set scrolloff=10                " Scroll when 10 lines from top/bottom
 set sidescrolloff=10            " Scroll when 10 columns from left/right
 
+set number                      " Actual number show for the current line
 set relativenumber              " Relative numbering
 set cursorline                  " Highlight the cursor line
 set autoread
@@ -108,7 +110,7 @@ highlight Pmenu ctermbg=238 gui=bold
 colorscheme molokai
 
 
-" Plugin hotkeys {{{1
+" Plugin settings and mapped keys {{{1
 
 map <leader>g :GundoToggle<cr>
 nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags<cr> 
@@ -121,11 +123,23 @@ let g:csv_nomap_cr = 1
 
 " TweetVim  {{{2
 
+nnoremap <silent><leader> th :TweetVimHomeTimeline<cr>
+nnoremap <silent><leader> tm :TweetVimMentions<cr>
+nnoremap <silent><leader> ts :<C-u>TweetVimSay<cr>
 
-nnoremap <silent> s  :<C-u>TweetVimSay<cr>
-nnoremap <silent> t  :TweetVimHomeTimeline<cr>
-nnoremap <silent> tm :TweetVimMentions<cr>
+" CtrlP {{{2
 
+let g:ctrlp_match_window = 'max:30'
+let g:ctrlp_custom_ignore = '\v%(/\.%(git|hg|svn)|\.%(class|o|png|jpg|jpeg|bmp|tar|jar|tgz|deb|zip|zipx)$|/target/)'
+let g:ctrlp_switch_buffer = 'E'
+let g:ctrlp_working_path_mode = 'rc'
+let g:ctrlp_root_markers = ['readme.md']
+let g:ctrlp_open_multiple_files = '2vjr'
+
+map <leader>ff :CtrlP<cr> .
+map <leader>fb :CtrlPBuffer<cr>
+map <leader>fr :CtrlP<cr>
+map <leader>fm :CtrlPMixed<cr>
 
 " Filetype handling {{{1
 
