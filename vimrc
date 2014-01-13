@@ -3,7 +3,8 @@
 
 
 " Pathogen {{{1
-filetype off
+set nocompatible
+set runtimepath+=~/.vim
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
