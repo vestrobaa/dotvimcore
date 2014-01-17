@@ -80,11 +80,8 @@ map <Up> :echo '^^^'<cr>
 map <Down> :echo '___'<cr>
 
 " Testing
-set statusline=%<%f\ %h%m%r%q\ %{fugitive#statusline()}%=\ char(%b,0x%B)\ %l,%v\ [%p%%]b%n
-"set laststatus=2            " Always put a status line in, even if only one window
-"set ch=2                    " Command line height
+set statusline=%<%f\ %h%m%r%q\ %{fugitive#statusline()}%=\ %a\ %b:0x%B\ @\ %v,%l/%L,%n
 set guioptions=cg           " was egmLt
-"set virtualedit=all         " move over imaginary spaces on empty lines
 set wildmenu
 
 " Fix XML (pretty print)

@@ -14,3 +14,10 @@
     - With unimpaired: [oc, ]oc, coc, and [ox, ]ox, cox
 1. Google drive integration
 1. Auto github editing
+1. Easy way to use a single Vim instance
+1. Get dbext to work with Ora!!
+1. Auto helpfile publisher
+1. Add vim pdf helpfile to standard pull
+1. Pdf viewer for Vim?
+1. Get a proper SQL syntax formatter
+1. Handle sensitive info: gvimrc, vimdb, vimdb.local
