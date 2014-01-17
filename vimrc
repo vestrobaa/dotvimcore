@@ -21,7 +21,7 @@ set scrolloff=10                " Scroll when 10 lines from top/bottom
 set sidescrolloff=10            " Scroll when 10 columns from left/right
 
 set number                      " Actual number show for the current line
-set relativenumber              " Relative numbering
+"set relativenumber              " Relative numbering. Slow downs everything
 set cursorline                  " Highlight the cursor line
 set autoread
 set hidden
@@ -81,10 +81,10 @@ map <Down> :echo '___'<cr>
 
 " Testing
 set statusline=%<%f\ %h%m%r%q\ %{fugitive#statusline()}%=\ char(%b,0x%B)\ %l,%v\ [%p%%]b%n
-set laststatus=2            " Always put a status line in, even if only one window
-set ch=2                    " Command line height
+"set laststatus=2            " Always put a status line in, even if only one window
+"set ch=2                    " Command line height
 set guioptions=cg           " was egmLt
-set virtualedit=all         " move over imaginary spaces on empty lines
+"set virtualedit=all         " move over imaginary spaces on empty lines
 set wildmenu
 
 " Fix XML (pretty print)
