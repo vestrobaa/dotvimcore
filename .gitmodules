@@ -100,3 +100,6 @@
 [submodule "bundle/focus-fullscreen"]
 	path = bundle/focus-fullscreen
 	url = https://github.com/derekmcloughlin/gvimfullscreen_win32.git
+[submodule "bundle/syntax-json"]
+	path = bundle/syntax-json
+	url = https://github.com/tpope/vim-jdaddy.git
