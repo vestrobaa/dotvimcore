@@ -141,15 +141,20 @@ map <leader>fm :CtrlPMixed<cr>
 
 " Filetype handling {{{1
 
-autocmd FileType python set sw=4 sts=4 omnifunc=pythoncomplete#Complete
-autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber set ai sw=2 sts=2
-autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+if has("autocmd")
+  autocmd FileType python set sw=4 sts=4 omnifunc=pythoncomplete#Complete
+  autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber set ai sw=2 sts=2
+  autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+  autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+  autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+  autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+  autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+  autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+  autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+  let pandoc_pipeline  = "pandoc --from=html --to=markdown"
+  let pandoc_pipeline .= " | pandoc --from=markdown --to=html"
+  autocmd FileType html let &formatprg=pandoc_pipeline
+endif
 
 
 " Database connections {{{1
