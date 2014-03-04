@@ -103,3 +103,6 @@
 [submodule "bundle/syntax-json"]
 	path = bundle/syntax-json
 	url = https://github.com/tpope/vim-jdaddy.git
+[submodule "bundle/color-badwolf"]
+	path = bundle/color-badwolf
+	url = https://github.com/sjl/badwolf.git
