@@ -74,6 +74,7 @@ let mapleader = ","
 let g:mapleader = ","
 " inoremap jk <esc>
 inoremap fe <esc>   " distribute more work to the left hand
+inoremap fq <esc>   " distribute more work to the left hand
 inoremap <esc> <nop>
 map <Left> :echo '<<<'<cr>
 map <Right> :echo '>>>'<cr>
@@ -81,7 +82,7 @@ map <Up> :echo '^^^'<cr>
 map <Down> :echo '___'<cr>
 
 " Testing
-set statusline=%<%f\ %h%m%r%q\ %{fugitive#statusline()}%=\ %a\ %b:0x%B\ @\ %v,%l/%L,%n
+set statusline=%<%f\ %h%m%r%q\ %{fugitive#statusline()}%=\ %a\ %b:0x%B\ @\ %v,%l/%Lb%n
 set guioptions=cg           " was egmLt
 set wildmenu
 
