@@ -82,7 +82,8 @@ map <Up> :echo '^^^'<cr>
 map <Down> :echo '___'<cr>
 
 " Testing
-set statusline=%<%f\ %h%m%r%q\ %{fugitive#statusline()}%=\ %a\ %b:0x%B\ @\ %v,%l/%Lb%n
+" set statusline=%<%f\ %h%m%r%q\ %{fugitive#statusline()}%=\ %a\ %b:0x%B\ @\ %v,%l/%Lb%n
+set statusline=%<%f\ %h%m%r%q\ %{fugitive#statusline()}%=\ %a\ %{getline('.')[col('.')-1]}:%b:0x%B\ @\ %v,%l/%Lb%n
 set guioptions=cg           " was egmLt
 set wildmenu
 
