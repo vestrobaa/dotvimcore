@@ -19,6 +19,10 @@ To install on Windows:
     mklink /h _vimrc %userprofile%\.vim\vimrc
     mklink /h _gvimrc %userprofile%\.vim\gvimrc
 
+    ' Update:
+    ' Switch to vimfiles instead of .vim
+    ' Git slows to a crawl in .vim
+
 
 ###Install Vim plugins
 
