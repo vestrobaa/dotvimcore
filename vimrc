@@ -82,8 +82,21 @@ map <Up> :echo '^^^'<cr>
 map <Down> :echo '___'<cr>
 
 " Testing
+
+function! FugitiveStatusLine()
+  let status = fugitive#statusline()
+  let trimmed = substitute(status, '\[Git(\(.*\))\]', '\1', '')
+  let trimmed = substitute(trimmed, '\(\w\)\w\+\ze/', '\1', '')
+  if len(trimmed) == 0
+    return ""
+  else
+    return 'branch:' . trimmed[0:10]
+  endif
+endfunction
+
 " set statusline=%<%f\ %h%m%r%q\ %{fugitive#statusline()}%=\ %a\ %b:0x%B\ @\ %v,%l/%Lb%n
-set statusline=%<%f\ %h%m%r%q\ %{fugitive#statusline()}%=\ %a\ %{getline('.')[col('.')-1]}:%b:0x%B\ @\ %v,%l/%Lb%n
+" set statusline=%<%f\ %h%m%r%q\ %{fugitive#statusline()}%=\ %a\ %{getline('.')[col('.')-1]}:%b:0x%B\ @\ %v,%l/%Lb%n
+set statusline=%<%f\ %h%m%r%q\ %{FugitiveStatusLine()}%=\ %a\ %{getline('.')[col('.')-1]}:%b:0x%B\ @\ %v,%l/%Lb%n
 set guioptions=cg           " was egmLt
 set wildmenu
 
