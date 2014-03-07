@@ -75,6 +75,7 @@ let g:mapleader = ","
 " inoremap jk <esc>
 inoremap fe <esc>   " distribute more work to the left hand
 inoremap fq <esc>   " distribute more work to the left hand
+inoremap jf <esc>   " distribute more work to the left hand
 inoremap <esc> <nop>
 map <Left> :echo '<<<'<cr>
 map <Right> :echo '>>>'<cr>
@@ -105,8 +106,12 @@ map <leader>fx :1,%s/>\s*</>\r</g<cr>gg=G
 
 " Fix SQL (wtf, where's the macro!?)
 
-" Trim last 4 columns in a CSV file
+" Old csv fix macro
 nmap <leader>csv :%s/\s\+$//g<cr>:%le<cr>:4,$ v/^"/normal kA jkJ/g<cr>
+" Join lines in CSV data section that does not start with a quote to the previous line
+nmap <leader>csj :4,$ v/^"/normal kJ/g<cr>
+" Trim last 4 csv fields
+nmap <leader>cs4 :% s/\v(,[^,]*){4}$//ge<cr>
 
 " Change directory to that of the current file
 nmap <silent><Leader>cd :lcd %:h<cr>:pwd<cr>
