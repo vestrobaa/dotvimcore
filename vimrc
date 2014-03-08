@@ -73,9 +73,7 @@ endif
 let mapleader = ","
 let g:mapleader = ","
 " inoremap jk <esc>
-inoremap fe <esc>   " distribute more work to the left hand
 inoremap fq <esc>   " distribute more work to the left hand
-inoremap jf <esc>   " distribute more work to the left hand
 inoremap <esc> <nop>
 map <Left> :echo '<<<'<cr>
 map <Right> :echo '>>>'<cr>
