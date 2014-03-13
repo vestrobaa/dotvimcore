@@ -97,6 +97,8 @@ endfunction
 set statusline=%<%f\ %h%m%r%q\ %{FugitiveStatusLine()}%=\ %a\ %{getline('.')[col('.')-1]}:%b:0x%B\ @\ %v,%l/%Lb%n
 set guioptions=cg           " was egmLt
 set wildmenu
+set cmdheight=2
+set laststatus=2
 
 " Fix XML (pretty print)
 map <leader>fx :1,%s/>\s*</>\r</g<cr>gg=G
