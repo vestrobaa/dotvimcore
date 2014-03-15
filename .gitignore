@@ -1,6 +1,5 @@
 *.swp
 *.pyc
 *.svn/*
-gvimrc
 *.netrwhist
 vimdb.local

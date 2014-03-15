@@ -124,7 +124,15 @@ imap <Leader>fn <c-r>=expand('%:t:r')<cr>
 " Not used
 highlight Pmenu ctermbg=238 gui=bold
 
-colorscheme molokai
+if has("win32") || has("win64")
+  colorscheme molokai
+elseif has("unix")
+  colorscheme badwolf
+elseif has("macunix")
+  colo distinguished
+else
+  colo molokai
+endif
 
 
 " Plugin settings and mapped keys {{{1
