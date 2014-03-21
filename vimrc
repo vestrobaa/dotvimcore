@@ -146,12 +146,6 @@ let g:csv_nomap_j = 1
 let g:csv_nomap_k = 1
 let g:csv_nomap_cr = 1
 
-" TweetVim  {{{2
-
-nnoremap <silent><leader> th :TweetVimHomeTimeline<cr>
-nnoremap <silent><leader> tm :TweetVimMentions<cr>
-nnoremap <silent><leader> ts :<C-u>TweetVimSay<cr>
-
 " CtrlP {{{2
 
 let g:ctrlp_match_window = 'max:30'
