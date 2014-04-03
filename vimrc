@@ -27,7 +27,7 @@ set autoread
 set hidden
 set smartindent
 set vb t_vb="
-set textwidth=78
+set textwidth=0
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 set list                        " Show non-space whitespaces with set list!
 set smarttab                    " Be smart when using tabs
