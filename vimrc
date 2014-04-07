@@ -55,19 +55,6 @@ set nobackup
 set nowritebackup
 set autoindent
 
-
-" Cross platform support - http://stackoverflow.com/questions/10612362/setting-up-gvim-on-windows
-scriptencoding utf-8
-let g:my_vim_dir=expand("$HOME/.vim")
-if has("win32") || has("win64")
-  execute "set rtp^=".g:my_vim_dir
-  execute "set rtp+=".g:my_vim_dir."\\after"
-  let &rtp=substitute(&rtp,"[/]","\\","g")
-  if &shell=~#'bash$'
-    set shell=$COMSPEC " sets shell to correct path for cmd.exe
-  endif
-endif
-
 " Custom {{{1
 
 let mapleader = ","
