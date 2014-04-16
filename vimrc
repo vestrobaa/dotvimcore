@@ -142,10 +142,15 @@ let g:ctrlp_working_path_mode = 'rc'
 let g:ctrlp_root_markers = ['readme.md']
 let g:ctrlp_open_multiple_files = '2vjr'
 
-map <leader>ff :CtrlP<cr> .
 map <leader>fb :CtrlPBuffer<cr>
 map <leader>fr :CtrlP<cr>
 map <leader>fm :CtrlPMixed<cr>
+map <leader>fd :CtrlPDir<cr>
+map <leader>fq :CtrlPQuickfix<cr>
+
+" ctags {{{2
+nnoremap <leader>tf :!ctags -R --exclude=*.git *<cr>
+nnoremap <leader>tg :!ctags -R -f ./.git/tags --exclude=*.git *<cr>
 
 " Filetype handling {{{1
 
