@@ -102,6 +102,9 @@ nmap <leader>cs4 :% s/\v(,[^,]*){4}$//ge<cr>
 " Change directory to that of the current file
 nmap <silent><Leader>cd :lcd %:h<cr>:pwd<cr>
 
+" Agent matching
+nmap <leader>af :search('\([0-9]*\)[ \t]debug[ \t]*agent[ /t ]*starting agent[ /t]*\([^(]*\)(\([^)]*\))[^=]*=\(\w[^/.]*\/\w[^/.]*\)\.\(\w[^,]*\)')
+
 " Fullscreen on Windows. Yay!
 nmap <silent><F11> :call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<cr>
 
@@ -127,6 +130,11 @@ endif
 map <leader>g :GundoToggle<cr>
 nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags<cr> 
 
+" ctrl space
+
+" let g:ctrlspace_default_mapping_key=<leader><space>
+let g:ctrlspace_unicode_font=0
+
 " csv {{{2
 
 let g:csv_nomap_j = 1
@@ -149,8 +157,9 @@ map <leader>fd :CtrlPDir<cr>
 map <leader>fq :CtrlPQuickfix<cr>
 
 " ctags {{{2
-nnoremap <leader>tf :!ctags -R --exclude=*.git *<cr>
-nnoremap <leader>tg :!ctags -R -f ./.git/tags --exclude=*.git *<cr>
+
+nnoremap <leader>tf :!ctags -R --exclude=*.git --tag-relative=yes *<cr>
+nnoremap <leader>tg :!ctags -R -f ./.git/tags --tag-relative=yes --exclude=*.git *<cr>
 
 " Filetype handling {{{1
 
@@ -167,6 +176,7 @@ if has("autocmd")
   let pandoc_pipeline  = "pandoc --from=html --to=markdown"
   let pandoc_pipeline .= " | pandoc --from=markdown --to=html"
   autocmd FileType html let &formatprg=pandoc_pipeline
+  autocmd FileType otmlog set sw=2 tw=200
 endif
 
 
