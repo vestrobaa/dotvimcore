@@ -3,3 +3,4 @@
 *.svn/*
 *.netrwhist
 vimdb.local
+tags*
