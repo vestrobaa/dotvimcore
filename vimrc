@@ -68,6 +68,13 @@ map <Down> :echo '___'<cr>
 
 " Testing
 
+fun! IgnoreCustomSpell()
+  syn match CamelCase /\<[A-Z][a-z]\+[A-Z].\{-}\>/ contains=@NoSpell transparent
+  syn match UpperCase /\<[A-Z]\+.\{-}\>/ contains=@NoSpell transparent
+  syn cluster Spell add=CamelCase
+  syn cluster Spell add=UpperCase
+endfun
+
 function! FugitiveStatusLine()
   let status = fugitive#statusline()
   let trimmed = substitute(status, '\[Git(\(.*\))\]', '\1', '')
