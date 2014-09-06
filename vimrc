@@ -158,7 +158,8 @@ let g:ctrlp_root_markers = ['readme.md']
 let g:ctrlp_open_multiple_files = '2vjr'
 
 map <leader>fb :CtrlPBuffer<cr>
-map <leader>fr :CtrlP<cr>
+map <leader>ff :CtrlP<cr>
+map <leader>fr :CtrlP .<cr>
 map <leader>fm :CtrlPMixed<cr>
 map <leader>fd :CtrlPDir<cr>
 map <leader>fq :CtrlPQuickfix<cr>
