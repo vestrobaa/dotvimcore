@@ -28,3 +28,7 @@
 - Handle sensitive info: gvimrc, vimdb, vimdb.local
 - Mix MD and SQL syntax highlighting. See sh-embed and sh-awk
 - Spelling to ignore words with the first letter capitalized
+
+- Easy font changing in Windows
+- Easy presentation / screen sharing mode in Windows
+- Recent file list

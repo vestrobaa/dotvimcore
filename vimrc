@@ -68,6 +68,18 @@ map <Down> :echo '___'<cr>
 
 " Testing
 
+" From http://vim.wikia.com/wiki/Change_font_size_quickly
+nnoremap <C-Up> :silent! let &guifont = substitute(
+ \ &guifont,
+ \ ':h\zs\d\+',
+ \ '\=eval(submatch(0)+1)',
+ \ '')<CR>
+nnoremap <C-Down> :silent! let &guifont = substitute(
+ \ &guifont,
+ \ ':h\zs\d\+',
+ \ '\=eval(submatch(0)-1)',
+ \ '')<CR>
+
 fun! IgnoreCustomSpell()
   syn match CamelCase /\<[A-Z][a-z]\+[A-Z].\{-}\>/ contains=@NoSpell transparent
   syn match UpperCase /\<[A-Z]\+.\{-}\>/ contains=@NoSpell transparent
