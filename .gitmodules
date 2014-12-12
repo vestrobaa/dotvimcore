@@ -100,3 +100,6 @@
 [submodule "bundle/ctrlspace"]
 	path = bundle/ctrlspace
 	url = https://github.com/szw/vim-ctrlspace.git
+[submodule "bundle/ruby"]
+	path = bundle/ruby
+	url = https://github.com/vim-ruby/vim-ruby.git
