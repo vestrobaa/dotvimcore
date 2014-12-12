@@ -176,6 +176,10 @@ map <leader>fm :CtrlPMixed<cr>
 map <leader>fd :CtrlPDir<cr>
 map <leader>fq :CtrlPQuickfix<cr>
 
+" CtrlSpace {{{2
+
+let g:ctrlspace_unicode_font = 1
+
 " ctags {{{2
 
 nnoremap <leader>tf :!ctags -R --exclude=*.git --tag-relative=yes *<cr>
