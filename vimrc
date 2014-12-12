@@ -88,14 +88,16 @@ fun! IgnoreCustomSpell()
 endfun
 
 function! FugitiveStatusLine()
-  let status = fugitive#statusline()
-  let trimmed = substitute(status, '\[Git(\(.*\))\]', '\1', '')
-  let trimmed = substitute(trimmed, '\(\w\)\w\+\ze/', '\1', '')
-  if len(trimmed) == 0
-    return ""
-  else
-    return 'branch:' . trimmed[0:10]
-  endif
+  " Debugging occasional repeating ::::: in the status line
+  return fugitive#statusline()
+"  let status = fugitive#statusline()
+"  let trimmed = substitute(status, '\[Git(\(.*\))\]', '\1', '')
+"  let trimmed = substitute(trimmed, '\(\w\)\w\+\ze/', '\1', '')
+"  if len(trimmed) == 0
+"    return ""
+"  else
+"    return 'branch:' . trimmed[0:10]
+"  endif
 endfunction
 
 " set statusline=%<%f\ %h%m%r%q\ %{fugitive#statusline()}%=\ %a\ %b:0x%B\ @\ %v,%l/%Lb%n
@@ -149,16 +151,13 @@ endif
 map <leader>g :GundoToggle<cr>
 nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags<cr> 
 
-" ctrl space
-
-" let g:ctrlspace_default_mapping_key=<leader><space>
-let g:ctrlspace_unicode_font=0
 
 " csv {{{2
 
 let g:csv_nomap_j = 1
 let g:csv_nomap_k = 1
 let g:csv_nomap_cr = 1
+
 
 " CtrlP {{{2
 
@@ -176,14 +175,32 @@ map <leader>fm :CtrlPMixed<cr>
 map <leader>fd :CtrlPDir<cr>
 map <leader>fq :CtrlPQuickfix<cr>
 
+
 " CtrlSpace {{{2
 
+" TODO: Try default mapping of <leader><space>
+" let g:ctrlspace_default_mapping_key=<leader><space>
+" TODO: May need to default unicode to 0 for windows
+" TODO: May need to switch off ruby for windows
+
+let g:ctrlspace_height = 3
 let g:ctrlspace_unicode_font = 1
+let g:ctrlspace_max_files = 750
+let g:ctrlspace_use_ruby_bindings = 1
+let g:ctrlspace_use_tabline = 1
+
+" Pretty status line
+hi CtrlSpaceSelected term=reverse ctermfg=187  ctermbg=23  cterm=bold
+hi CtrlSpaceNormal   term=NONE    ctermfg=244  ctermbg=232 cterm=NONE
+hi CtrlSpaceSearch   ctermfg=220  ctermbg=NONE cterm=bold
+hi CtrlSpaceStatus   ctermfg=230  ctermbg=234  cterm=NONE
+
 
 " ctags {{{2
 
 nnoremap <leader>tf :!ctags -R --exclude=*.git --tag-relative=yes *<cr>
 nnoremap <leader>tg :!ctags -R -f ./.git/tags --tag-relative=yes --exclude=*.git *<cr>
+
 
 " Filetype handling {{{1
 
