@@ -4,3 +4,7 @@
 *.netrwhist
 vimdb.local
 tags*
+backups/*.*
+swaps/*.*
+undo/*.*
+syntax/*.*
