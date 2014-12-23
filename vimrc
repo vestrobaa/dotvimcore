@@ -186,7 +186,6 @@ map <leader>fq :CtrlPQuickfix<cr>
 let g:ctrlspace_height = 3
 let g:ctrlspace_unicode_font = 1
 let g:ctrlspace_max_files = 750
-let g:ctrlspace_use_ruby_bindings = 1
 let g:ctrlspace_use_tabline = 1
 let g:ctrlspace_use_ruby_bindings = 0
 
