@@ -103,3 +103,6 @@
 [submodule "bundle/ruby"]
 	path = bundle/ruby
 	url = https://github.com/vim-ruby/vim-ruby.git
+[submodule "bundle/color-apprentice"]
+	path = bundle/color-apprentice
+	url = https://github.com/romainl/Apprentice.git
