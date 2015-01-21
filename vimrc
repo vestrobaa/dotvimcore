@@ -136,7 +136,8 @@ imap <Leader>fn <c-r>=expand('%:t:r')<cr>
 highlight Pmenu ctermbg=238 gui=bold
 
 if has("win32") || has("win64")
-  colorscheme molokai
+  "colorscheme molokai
+  colorscheme otaku
 elseif has("unix")
   colorscheme badwolf
 elseif has("macunix")
