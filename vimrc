@@ -28,7 +28,7 @@ set hidden
 set smartindent
 set vb t_vb="
 set textwidth=0
-set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+"set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 set list                        " Show non-space whitespaces with set list!
 set smarttab                    " Be smart when using tabs
 set t_Co=256
@@ -67,6 +67,11 @@ map <Up> :echo '^^^'<cr>
 map <Down> :echo '___'<cr>
 
 " Testing
+
+"set listchars=eol:∫,extends:⋯,precedes:⋯,tab:∞⋅,trail:⋅ -- math theme
+if has("multi_byte")
+    set listchars=eol:✔,extends:↪,precedes:↩,tab:✖⋅
+endif
 
 " From http://vim.wikia.com/wiki/Change_font_size_quickly
 nnoremap <C-Up> :silent! let &guifont = substitute(
