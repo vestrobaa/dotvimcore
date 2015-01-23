@@ -28,7 +28,6 @@ set hidden
 set smartindent
 set vb t_vb="
 set textwidth=0
-"set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 set list                        " Show non-space whitespaces with set list!
 set smarttab                    " Be smart when using tabs
 set t_Co=256
@@ -68,9 +67,10 @@ map <Down> :echo '___'<cr>
 
 " Testing
 
-"set listchars=eol:∫,extends:⋯,precedes:⋯,tab:∞⋅,trail:⋅ -- math theme
-if has("multi_byte")
+if has("multi_byte") && !(has("win32") || has("win64"))
+  " Todo: Test on Linux
   set listchars=eol:✔,extends:↪,precedes:↩,tab:✖⋅
+  "set listchars=eol:∫,extends:⋯,precedes:⋯,tab:∞⋅,trail:⋅ -- math theme
 else
   set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 endif
