@@ -74,6 +74,7 @@ if has("multi_byte") && !(has("win32") || has("win64"))
   map <Down> :echo '↓'<cr>
 else
   set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+  set fillchars=vert::,fold:\ ,stl:\ ,stlnc::
   map <Left> :echo '<<<'<cr>
   map <Right> :echo '>>>'<cr>
   map <Up> :echo '^^^'<cr>
