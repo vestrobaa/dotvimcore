@@ -21,7 +21,7 @@ set scrolloff=10                " Scroll when 10 lines from top/bottom
 set sidescrolloff=10            " Scroll when 10 columns from left/right
 
 set number                      " Actual number show for the current line
-"set relativenumber              " Relative numbering. Slow downs everything
+"set relativenumber              " Relative numbering. Slow!
 set cursorline                  " Highlight the cursor line
 set autoread
 set hidden
@@ -59,11 +59,8 @@ set autoindent
 let mapleader = ","
 let g:mapleader = ","
 inoremap fq <esc>
+inoremap FQ <esc>
 inoremap <esc> <nop>
-map <Left> :echo '<<<'<cr>
-map <Right> :echo '>>>'<cr>
-map <Up> :echo '^^^'<cr>
-map <Down> :echo '___'<cr>
 
 " Testing
 
@@ -71,8 +68,16 @@ if has("multi_byte") && !(has("win32") || has("win64"))
   " Todo: Test on Linux
   set listchars=eol:✔,extends:↪,precedes:↩,tab:✖⋅
   "set listchars=eol:∫,extends:⋯,precedes:⋯,tab:∞⋅,trail:⋅ -- math theme
+  map <Left> :echo '←'<cr>
+  map <Right> :echo '→'<cr>
+  map <Up> :echo '↑'<cr>
+  map <Down> :echo '↓'<cr>
 else
   set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+  map <Left> :echo '<<<'<cr>
+  map <Right> :echo '>>>'<cr>
+  map <Up> :echo '^^^'<cr>
+  map <Down> :echo '___'<cr>
 endif
 
 " From http://vim.wikia.com/wiki/Change_font_size_quickly
