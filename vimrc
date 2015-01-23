@@ -70,7 +70,9 @@ map <Down> :echo '___'<cr>
 
 "set listchars=eol:∫,extends:⋯,precedes:⋯,tab:∞⋅,trail:⋅ -- math theme
 if has("multi_byte")
-    set listchars=eol:✔,extends:↪,precedes:↩,tab:✖⋅
+  set listchars=eol:✔,extends:↪,precedes:↩,tab:✖⋅
+else
+  set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 endif
 
 " From http://vim.wikia.com/wiki/Change_font_size_quickly
