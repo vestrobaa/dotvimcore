@@ -64,6 +64,15 @@ inoremap <esc> <nop>
 
 " Testing
 
+" Execute the tests
+nmap <silent><Leader>tf <Esc>:Pytest file<CR>
+nmap <silent><Leader>tc <Esc>:Pytest class<CR>
+nmap <silent><Leader>tm <Esc>:Pytest method<CR>
+" cycle through test errors
+nmap <silent><Leader>tn <Esc>:Pytest next<CR>
+nmap <silent><Leader>tp <Esc>:Pytest previous<CR>
+nmap <silent><Leader>te <Esc>:Pytest error<CR>
+
 if has("multi_byte") && !(has("win32") || has("win64"))
   " Todo: Test on Linux
   set listchars=eol:✔,extends:↪,precedes:↩,tab:✖⋅
@@ -219,7 +228,12 @@ nnoremap <leader>tg :!ctags -R -f ./.git/tags --tag-relative=yes --exclude=*.git
 " Filetype handling {{{1
 
 if has("autocmd")
-  autocmd FileType python set sw=4 sts=4 omnifunc=pythoncomplete#Complete
+  " Highlight characters past column 120
+  autocmd FileType python highlight Excess ctermbg=DarkGrey guibg=Black
+  autocmd FileType python match Excess /\%120v.*/
+  autocmd FileType python set nowrap
+  autocmd FileType python set foldmethod=indent foldlevel=99
+  autocmd FileType python set shiftwidth=4 softtabstop=4 tabstop=4 expandtab shiftround autoindent foldmethod=indent foldlevel=99 omnifunc=pythoncomplete#Complete
   autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber set ai sw=2 sts=2
   autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
   autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
