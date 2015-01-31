@@ -171,7 +171,12 @@ endif
 
 " Plugin settings and mapped keys {{{1
 
+" GUndo {{{2
+
 map <leader>g :GundoToggle<cr>
+
+" Markdown {{{2
+
 nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags<cr> 
 
 

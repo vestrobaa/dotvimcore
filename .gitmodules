@@ -16,9 +16,6 @@
 [submodule "bundle/markdown"]
 	path = bundle/markdown
 	url = git://github.com/tpope/vim-markdown.git
-[submodule "bundle/pep8"]
-	path = bundle/pep8
-	url = https://github.com/vim-scripts/pep8.git
 [submodule "bundle/syntax-markdown"]
 	path = bundle/syntax-markdown
 	url = git://github.com/plasticboy/vim-markdown.git
