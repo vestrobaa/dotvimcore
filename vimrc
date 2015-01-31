@@ -64,19 +64,30 @@ inoremap <esc> <nop>
 
 " Testing
 
+" <leader> mapping roadmap
+"
+" <leader>u for unit tests
+" <leader>? for functional tests
+" <leader>f for format functions
+" <leader>cs for csv funcions
+
+
 " Execute the tests
-nmap <silent><Leader>tf <Esc>:Pytest file<CR>
-nmap <silent><Leader>tc <Esc>:Pytest class<CR>
-nmap <silent><Leader>tm <Esc>:Pytest method<CR>
+nmap <silent><Leader>uf <Esc>:Pytest file<CR>
+nmap <silent><Leader>uc <Esc>:Pytest class<CR>
+nmap <silent><Leader>um <Esc>:Pytest method<CR>
 " cycle through test errors
-nmap <silent><Leader>tn <Esc>:Pytest next<CR>
-nmap <silent><Leader>tp <Esc>:Pytest previous<CR>
-nmap <silent><Leader>te <Esc>:Pytest error<CR>
+" Impaired extention?
+nmap <silent><Leader>un <Esc>:Pytest next<CR>
+nmap <silent><Leader>up <Esc>:Pytest previous<CR>
+nmap <silent><Leader>ue <Esc>:Pytest error<CR>
 
 if has("multi_byte") && !(has("win32") || has("win64"))
   " Todo: Test on Linux
+  " Symbol theme
   set listchars=eol:✔,extends:↪,precedes:↩,tab:✖⋅
-  "set listchars=eol:∫,extends:⋯,precedes:⋯,tab:∞⋅,trail:⋅ -- math theme
+  " Math theme
+  "set listchars=eol:∫,extends:⋯,precedes:⋯,tab:∞⋅,trail:⋅
   map <Left> :echo '←'<cr>
   map <Right> :echo '→'<cr>
   map <Up> :echo '↑'<cr>
@@ -158,7 +169,6 @@ imap <Leader>fn <c-r>=expand('%:t:r')<cr>
 highlight Pmenu ctermbg=238 gui=bold
 
 if has("win32") || has("win64")
-  "colorscheme molokai
   colorscheme otaku
 elseif has("unix")
   colorscheme badwolf
@@ -230,15 +240,20 @@ nnoremap <leader>tf :!ctags -R --exclude=*.git --tag-relative=yes *<cr>
 nnoremap <leader>tg :!ctags -R -f ./.git/tags --tag-relative=yes --exclude=*.git *<cr>
 
 
+" YouCompleteMe {{{2
+
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_windows_after_completion = 1
+
+
 " Filetype handling {{{1
 
 if has("autocmd")
   " Highlight characters past column 120
   autocmd FileType python highlight Excess ctermbg=DarkGrey guibg=Black
   autocmd FileType python match Excess /\%120v.*/
-  autocmd FileType python set nowrap
-  autocmd FileType python set foldmethod=indent foldlevel=99
-  autocmd FileType python set shiftwidth=4 softtabstop=4 tabstop=4 expandtab shiftround autoindent foldmethod=indent foldlevel=99 omnifunc=pythoncomplete#Complete
+  " autocmd FileType python set foldmethod=indent foldlevel=99
+  autocmd FileType python set shiftwidth=4 softtabstop=4 tabstop=4 expandtab shiftround omnifunc=pythoncomplete#Complete
   autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber set ai sw=2 sts=2
   autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
   autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
