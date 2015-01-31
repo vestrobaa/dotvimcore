@@ -20,8 +20,7 @@ set showcmd                     " Display incomplete commands
 set scrolloff=10                " Scroll when 10 lines from top/bottom
 set sidescrolloff=10            " Scroll when 10 columns from left/right
 
-set number                      " Actual number show for the current line
-"set relativenumber              " Relative numbering. Slow!
+set number                      " Actual number show for the current line, realivenumber is too slow
 set cursorline                  " Highlight the cursor line
 set autoread
 set hidden
@@ -31,6 +30,11 @@ set textwidth=0
 set list                        " Show non-space whitespaces with set list!
 set smarttab                    " Be smart when using tabs
 set t_Co=256
+set guioptions=cg           " was egmLt
+set wildmenu
+set cmdheight=2
+set laststatus=2
+set autoindent
 
 " Whitespace
 set nowrap                      " Don't wrap lines
@@ -52,7 +56,6 @@ set foldmethod=syntax
 set noswapfile
 set nobackup
 set nowritebackup
-set autoindent
 
 " Custom {{{1
 
@@ -62,15 +65,10 @@ inoremap fq <esc>
 inoremap FQ <esc>
 inoremap <esc> <nop>
 
-" Testing
 
-" <leader> mapping roadmap
-"
-" <leader>u for unit tests
-" <leader>? for functional tests
-" <leader>f for format functions
-" <leader>cs for csv funcions
+" Testing {{{1
 
+" Python {{{2
 
 " Execute the tests
 nmap <silent><Leader>uf <Esc>:Pytest file<CR>
@@ -81,6 +79,9 @@ nmap <silent><Leader>um <Esc>:Pytest method<CR>
 nmap <silent><Leader>un <Esc>:Pytest next<CR>
 nmap <silent><Leader>up <Esc>:Pytest previous<CR>
 nmap <silent><Leader>ue <Esc>:Pytest error<CR>
+
+
+" List characters {{{2
 
 if has("multi_byte") && !(has("win32") || has("win64"))
   " Todo: Test on Linux
@@ -101,6 +102,10 @@ else
   map <Down> :echo '___'<cr>
 endif
 
+
+" Windows {{{2
+
+" Font size change for Windows
 " From http://vim.wikia.com/wiki/Change_font_size_quickly
 nnoremap <C-Up> :silent! let &guifont = substitute(
  \ &guifont,
@@ -112,6 +117,9 @@ nnoremap <C-Down> :silent! let &guifont = substitute(
  \ ':h\zs\d\+',
  \ '\=eval(submatch(0)-1)',
  \ '')<CR>
+
+
+" Status bar {{{2
 
 fun! IgnoreCustomSpell()
   syn match CamelCase /\<[A-Z][a-z]\+[A-Z].\{-}\>/ contains=@NoSpell transparent
@@ -136,15 +144,14 @@ endfunction
 " set statusline=%<%f\ %h%m%r%q\ %{fugitive#statusline()}%=\ %a\ %b:0x%B\ @\ %v,%l/%Lb%n
 " set statusline=%<%f\ %h%m%r%q\ %{fugitive#statusline()}%=\ %a\ %{getline('.')[col('.')-1]}:%b:0x%B\ @\ %v,%l/%Lb%n
 set statusline=%<%f\ %h%m%r%q\ %{FugitiveStatusLine()}%=\ %a\ %{getline('.')[col('.')-1]}:%b:0x%B\ @\ %v,%l/%Lb%n
-set guioptions=cg           " was egmLt
-set wildmenu
-set cmdheight=2
-set laststatus=2
+
+
+" Mappings {{{2
 
 " Fix XML (pretty print)
 map <leader>fx :1,%s/>\s*</>\r</g<cr>gg=G
 
-" Fix SQL (wtf, where's the macro!?)
+" Fix SQL (wtf, where's the macro?!)
 
 " Old csv fix macro
 nmap <leader>csv :%s/\s\+$//g<cr>:%le<cr>:4,$ v/^"/normal kA jkJ/g<cr>
@@ -165,8 +172,8 @@ nmap <silent><F11> :call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<
 " Insert file name
 imap <Leader>fn <c-r>=expand('%:t:r')<cr>
 
-" Not used
-highlight Pmenu ctermbg=238 gui=bold
+
+" Colors {{{2
 
 if has("win32") || has("win64")
   colorscheme otaku
@@ -244,6 +251,17 @@ nnoremap <leader>tg :!ctags -R -f ./.git/tags --tag-relative=yes --exclude=*.git
 
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_windows_after_completion = 1
+
+
+" python-mode {{{2
+
+" Add check to use python3 if it's in versions and installed
+let g:pymode_python = 'python'
+let g:pymode_virtualenv = 0
+let g:pymode_folding = 1
+" Stackoverflow: YouCompleteMe freezes when used with python-mode
+let g:pymode_rope_complete_on_dot = 0
+let g:pymode_rope_completion = 0
 
 
 " Filetype handling {{{1

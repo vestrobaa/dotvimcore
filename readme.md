@@ -1,9 +1,9 @@
-###VIM
+#VIM
 
 My [Vim][1] [configuration][5]
 
 
-###Install Vim configuration
+##Install Vim configuration
 
 Install the configuration files from [GitHub][6]
 
@@ -14,17 +14,13 @@ Install the configuration files from [GitHub][6]
 To install on Windows:
 
     Configure environment variable home=%userprofile%
-    git clone git://github.com/vestrobaa/dotvimcore.git %userprofile%\.vim
-    cp $userprofile%\.vim\gvimrc.sample %userprofile%\.vim\gvimrc
-    mklink /h _vimrc %userprofile%\.vim\vimrc
-    mklink /h _gvimrc %userprofile%\.vim\gvimrc
-
-    ' Update:
-    ' Switch to vimfiles instead of .vim
-    ' Git slows to a crawl in .vim
+    git clone git://github.com/vestrobaa/dotvimcore.git %userprofile%\vimfiles
+    cp $userprofile%\.vim\gvimrc.sample %userprofile%\vimfiles\gvimrc
+    mklink /h _vimrc %userprofile%\vimfiles\vimrc
+    mklink /h _gvimrc %userprofile%\vimfiles\gvimrc
 
 
-###Install Vim plugins
+##Install Vim plugins
 
     cd ~/.vim
     git submodule init
@@ -37,13 +33,13 @@ Or upgrade to the latest version of each
     git submodule foreach git pull origin master
 
 
-###Vim Plugins
+##Vim Plugins
 
 I'm using the following Vim plugins:
 
 1. General
     - [CtrlP][20] fuzzy file finder
-    - [Unimpaired][22] [easymotion][21] navigation
+    - [Unimpaired][22]
     - [Mustang][80], [distinguished][81] color schemes
     - [Surround][82] text tagging
     - Must have [Twitter][83]!
@@ -60,15 +56,15 @@ I'm using the following Vim plugins:
     - Markdown to html: Put [Markdown.pl][3] in the path or in /usr/local/bin
 
 
-###Plugin install process with ~/.vim in Git
+##Plugin install process with ~/.vim in Git
 
     cd ~/.vim
     git submodule init
-    git submodule add git://whatever.git bundle/whatever
+    git submodule add git://github.com:/author/whatever.git bundle/whatever
     git commit -m 'Added submodule whatever'
     git push
 
-###Plugin removal process
+##Plugin removal process
 
 Remove the plugin files in the bundle subfolder. If you are tracking your Vim configuration in Git, use:
 
@@ -80,13 +76,20 @@ Remove the plugin files in the bundle subfolder. If you are tracking your Vim co
     Commit
 
 
-###Usage
+##Usage
+
+##Leader roadmap
+
+Unit test: `<leader>u`
+Functional tests: `<leader>b?`
+Formatting: `<leader>f`
+Custom CSV: `<leader>cs`
+
+##Plugins
 
 CtrlP: `<c-p>`  
-masymotion: `<leader><leader>movement`, `,,w`  
 Markdown html expand: `<leader>md`  
 Gundo file histroy: `<leader>g`  
-Taglist: `<leader>.`  
 Surround text:  
 
     cs<from><to>, cs"', cst<to> - Change surrounding character, string or <tag> combination  
@@ -95,7 +98,7 @@ Surround text:
     yss" - Yank and surround the line with "  
     ys$" - Yank and surround the rest of the line with "  
 
-DbExt:
+### DbExt:
 
     :DBPromptForBufferParameters - Connect to the database
     <leader>se[ |l] - SQL execute ( )visual selection, (l)ine, 
@@ -104,9 +107,11 @@ DbExt:
     <leader>sl[t|v|p|c] - SQL list (t)able, (v)iew, (p)rocedure, (c)olumn
     <leader>sh - SQL history
 
-Exuberant Ctags:
+### Exuberant Ctags:
 
-Generate tags   `ctags -R .`  
+Generate tags   `<leader>tf` to generate tags in the root folder
+Generate tags   `<leader>tg` to generate tags in the git folder
+Generate tags   `ctags -R .` to generate tags manually
 Jump to a tag   `<c-]>` or back `<c-t>`  
 Code options    `<c-x><c-o>`  
 Code completion `<c-x><c-]>`  
