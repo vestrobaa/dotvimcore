@@ -249,6 +249,8 @@ nnoremap <leader>tg :!ctags -R -f ./.git/tags --tag-relative=yes --exclude=*.git
 
 " YouCompleteMe {{{2
 
+
+" let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_windows_after_completion = 1
 
@@ -256,9 +258,8 @@ let g:ycm_autoclose_preview_windows_after_completion = 1
 " python-mode {{{2
 
 " Add check to use python3 if it's in versions and installed
-let g:pymode_python = 'python'
 let g:pymode_virtualenv = 0
-let g:pymode_folding = 1
+"let g:pymode_folding = 1
 " Stackoverflow: YouCompleteMe freezes when used with python-mode
 let g:pymode_rope_complete_on_dot = 0
 let g:pymode_rope_completion = 0
