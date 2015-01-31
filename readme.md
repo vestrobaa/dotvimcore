@@ -83,7 +83,7 @@ Remove the plugin files in the bundle subfolder. If you are tracking your Vim co
 ###Usage
 
 CtrlP: `<c-p>`  
-Easymotion: `<leader><leader>movement`, `,,w`  
+masymotion: `<leader><leader>movement`, `,,w`  
 Markdown html expand: `<leader>md`  
 Gundo file histroy: `<leader>g`  
 Taglist: `<leader>.`  
