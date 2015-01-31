@@ -265,6 +265,14 @@ let g:pymode_rope_complete_on_dot = 0
 let g:pymode_rope_completion = 0
 
 
+" syntastic {{{2
+
+let g:syntastic_mode_map = {
+  \ "mode": "active",
+  \ "active_filetypes": [],
+  \ "passive_filetypes": ["python"] }
+
+
 " Filetype handling {{{1
 
 if has("autocmd")
