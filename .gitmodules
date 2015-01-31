@@ -112,6 +112,3 @@
 [submodule "bundle/repeat"]
 	path = bundle/repeat
 	url = https://github.com/tpope/vim-repeat.git
-[submodule "bundle/color-tomorrow"]
-	path = bundle/color-tomorrow
-	url = https://github.com/chriskempson/tomorrow-theme.git
