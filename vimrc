@@ -84,7 +84,6 @@ nmap <silent><Leader>ue <Esc>:Pytest error<CR>
 " List characters {{{2
 
 if has("multi_byte") && !(has("win32") || has("win64"))
-  " Todo: Test on Linux
   " Symbol theme
   set listchars=eol:✔,extends:↪,precedes:↩,tab:✖⋅
   " Math theme
