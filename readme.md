@@ -117,6 +117,17 @@ Code options    `<c-x><c-o>`
 Code completion `<c-x><c-]>`  
 
 
+### Python-mode
+
+Lint toggle         `PymodeLintToggle`
+Lint auto fix       `PymodeLintAuto`
+Run code            `<leader>r`
+Breakpoint          `<leader>b`
+Pydoc               `K`
+Text object Method  `M`, and `[[, [M, ]M, ]]`
+Text object Class   `C`, and `[[, [C, ]C, ]]`
+
+
 [1]: http://www.vim.org/
 [5]: https://github.com/vestrobaa/dotvimcore
 [2]: https://chrome.google.com/webstore/detail/jmchmkecamhbiokiopfpnfgbidieafmd 
