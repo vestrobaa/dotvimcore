@@ -88,10 +88,10 @@ if has("multi_byte") && !(has("win32") || has("win64"))
   set listchars=eol:✔,extends:↪,precedes:↩,tab:✖⋅
   " Math theme
   "set listchars=eol:∫,extends:⋯,precedes:⋯,tab:∞⋅,trail:⋅
-  map <Left> :echo '←'<cr>
-  map <Right> :echo '→'<cr>
-  map <Up> :echo '↑'<cr>
-  map <Down> :echo '↓'<cr>
+  map <Left> :echo '←←←'<cr>
+  map <Right> :echo '→→→'<cr>
+  map <Up> :echo '↑↑↑'<cr>
+  map <Down> :echo '↓↓↓'<cr>
 else
   set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
   set fillchars=vert::,fold:\ ,stl:\ ,stlnc::
