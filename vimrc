@@ -83,18 +83,23 @@ nmap <silent><Leader>ue <Esc>:Pytest error<CR>
 
 " List characters {{{2
 
-if has("multi_byte") && !(has("win32") || has("win64"))
-  " Symbol theme
-  set listchars=eol:✔,extends:↪,precedes:↩,tab:✖⋅
-  " Math theme
-  "set listchars=eol:∫,extends:⋯,precedes:⋯,tab:∞⋅,trail:⋅
+if has("multi_byte") 
+  if !(has("win32") || has("win64"))
+    " Symbol theme
+    set listchars=eol:✔,extends:↪,precedes:↩,tab:✖⋅
+    " Math theme
+    "set listchars=eol:∫,extends:⋯,precedes:⋯,tab:∞⋅,trail:⋅
+  else
+    set listchars=eol:˺,extends:»,precedes:«,tab:˻\ 
+    set fillchars=vert::,fold:\ ,stl:\ ,stlnc::
+  endif
+
   map <Left> :echo '←←←'<cr>
   map <Right> :echo '→→→'<cr>
   map <Up> :echo '↑↑↑'<cr>
   map <Down> :echo '↓↓↓'<cr>
 else
   set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
-  set fillchars=vert::,fold:\ ,stl:\ ,stlnc::
   map <Left> :echo '<<<'<cr>
   map <Right> :echo '>>>'<cr>
   map <Up> :echo '^^^'<cr>
