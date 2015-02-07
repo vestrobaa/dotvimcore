@@ -1,4 +1,4 @@
-###Annoyances
+# Annoyances
 
 'Grrr'
 
@@ -32,7 +32,15 @@
 - Easy font changing in Windows
 - Easy presentation / screen sharing mode in Windows
 - Recent file list
-- <shift-o> not working in Gstatus
+
+## Python
+
 - Python autocomplete not working
 - Python code coverage not installed
 - Want to switch easily to nosetest
+- YouCompleteMe alternative. Not multi OS friendly
+
+## Django
+
+- CtrlP extention for model/view/url/test/admin
+- CtrlP extension for folders templates / template tags / management

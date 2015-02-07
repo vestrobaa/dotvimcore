@@ -187,18 +187,22 @@ endif
 
 " Django {{{2
 
-" This works nicely, but use as fallback. Use tmux for this mapping
+" From https://code.djangoproject.com/wiki/UsingVimWithDjango
+
+" Django mapping {{{3
+
+" Vim to switch files, tmux to switch sessions/tags
 let g:last_relative_dir = ''
-nnoremap \1 :call RelatedFile ("models.py")<cr>
-nnoremap \2 :call RelatedFile ("views.py")<cr>
-nnoremap \3 :call RelatedFile ("urls.py")<cr>
-nnoremap \4 :call RelatedFile ("admin.py")<cr>
-nnoremap \5 :call RelatedFile ("tests.py")<cr>
-nnoremap \6 :call RelatedFile ("templates/")<cr>
-nnoremap \7 :call RelatedFile ("templatetags/")<cr>
-nnoremap \8 :call RelatedFile ("management/")<cr>
-nnoremap \0 :e settings.py<cr>
-nnoremap \9 :e urls.py<cr>
+nnoremap <leader>dm :call RelatedFile ("models.py")<cr>
+nnoremap <leader>dv :call RelatedFile ("views.py")<cr>
+nnoremap <leader>du :call RelatedFile ("urls.py")<cr>
+nnoremap <leader>da :call RelatedFile ("admin.py")<cr>
+nnoremap <leader>dt :call RelatedFile ("tests.py")<cr>
+" nnoremap <leader>dtm :call RelatedFile ("templates/")<cr>
+" nnoremap <leader>dtt :call RelatedFile ("templatetags/")<cr>
+" nnoremap <leader>dman :call RelatedFile ("management/")<cr>
+nnoremap <leader>ds :e settings.py<cr>
+" nnoremap <leader>dpu :e urls.py<cr>
 
 fun! RelatedFile(file)
     "This is to check that the directory looks djangoish
@@ -223,6 +227,15 @@ fun! SetAppDir()
 endfun
 autocmd BufEnter *.py call SetAppDir()
 
+" Django surround {{{3
+let b:surround_{char2nr("v")} = "{{ \r }}"
+let b:surround_{char2nr("{")} = "{{ \r }}"
+let b:surround_{char2nr("%")} = "{% \r %}"
+let b:surround_{char2nr("b")} = "{% block \1block name: \1 %}\r{% endblock \1\1 %}"
+let b:surround_{char2nr("i")} = "{% if \1condition: \1 %}\r{% endif %}"
+let b:surround_{char2nr("w")} = "{% with \1with: \1 %}\r{% endwith %}"
+let b:surround_{char2nr("f")} = "{% for \1for loop: \1 %}\r{% endfor %}"
+let b:surround_{char2nr("c")} = "{% comment %}\r{% endcomment %}"
 
 " Plugin settings and mapped keys {{{1
 
