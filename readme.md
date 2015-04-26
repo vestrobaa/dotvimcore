@@ -127,6 +127,14 @@ Pydoc               `K`
 Text object Method  `M`, and `[[, [M, ]M, ]]`
 Text object Class   `C`, and `[[, [C, ]C, ]]`
 
+### Completion
+
+Complete with prev match    `<c-p>`
+Complete with next match    `<c-n>`
+Complete with tag           `<c-x><c-]>`
+Complete with file          `<c-x><c-f>`
+Complete with Omnicomplete  `<c-x><c-o>`
+Complete with line          `<c-x><c-l>`
 
 [1]: http://www.vim.org/
 [5]: https://github.com/vestrobaa/dotvimcore
