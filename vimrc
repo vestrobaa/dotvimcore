@@ -67,6 +67,9 @@ inoremap <esc> <nop>
 
 
 " Testing {{{1
+" Complete {{{2
+" Add spell completion, if in spell mode
+set complete=.,w,b,u,t,i,kspell
 
 " Python {{{2
 
