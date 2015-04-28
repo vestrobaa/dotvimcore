@@ -32,6 +32,8 @@
 - Easy font changing in Windows
 - Easy presentation / screen sharing mode in Windows
 - Recent file list
+- Add old status line section to Airline for navigation mode `getline('.')[col('.')-1]}:%b:0x%B\ @\ %v,%l/%Lb%n`
+-
 
 ## Python
 

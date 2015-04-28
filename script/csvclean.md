@@ -3,14 +3,14 @@
 Run the following VIM commands to clean up an OTM exported CSV file
 
     %s/\s\+$//g
-    :%le
-    :4,$ v/^"/normal kA jkJ/g
+    %le
+    4,$ v/^"/normal kA jkJ/g
 
 Script strips off the trailing and then the leading white space. Then join the spanning lines, as follows:
 
 #### Range
 
-For all lines after the header lines (3)
+For all lines after the three header lines
 
 #### Pattern
 
@@ -18,15 +18,15 @@ Lines not starting with a "
 
 #### Action
 
-1. 	Up (k)
-1. 	Insert after end of line (A)
-1. 	Space ( )
-1. 	Exit insert mode (jk)
-1. 	Join line (J)
+- Up (k)
+- Insert after end of line (A)
+- Space ( )
+- Exit insert mode (jk)
+- Join line (J)
 
 #### Command
 
-Note the g (globally) is not necessary in this case
+(g)lobally
 
 ### Macro version
 
@@ -38,3 +38,5 @@ nmap <leader>csv :%s/\s\+$//g<cr>:%le<cr>:4,$ v/^"/normal kA jkJ/g<cr>
 Drop the last 4 columns if they contain audit info
 
     g/.*,.*,.*,.*,/normal A jk4F,d$jk0
+
+
