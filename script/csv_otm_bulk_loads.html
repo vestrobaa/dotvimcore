@@ -1,0 +1,47 @@
+<h1 id="csv-bulk-load-and-custom-configuration-otm-load">CSV bulk load and custom configuration OTM load</h1>
+<h2 id="general">General</h2>
+<p>Use VIM's CSV syntax https://github.com/vim-scripts/csv.vim.git Show lines start with <code>/^</code></p>
+<h3 id="format-html-export-to-csv">Format HTML export to CSV</h3>
+<p>Note: Use argdo instead of bufdo</p>
+<p>Find -- in comments <code>/--</code> Delete header html info <code>:bufdo normal ggndgg</code> Delete footer html info <code>:bufdo normal GNdG</code> Delete &quot;select * from&quot; <code>:bufdo normal ggd3w</code> Delete SQL after table name <code>:bufdo normal gg0eld$</code> Make the table name CAPS <code>:bufdo normal gg0V$gU</code> Save all <code>:wa</code></p>
+<h3 id="fix-csv-layout">Fix CSV layout</h3>
+<p>Drop ^M characters <code>:bufdo %s/&lt;Ctrl-V&gt;&lt;Ctrl-M&gt;//ge</code> Fix spanning lines <code>:bufdo normal ,csj</code> Drop the auditing columns <code>:bufdo normal ,cs4</code> Fix the terminator on the last line <code>:bufdo normal Gofqdd</code> Go to top of each file <code>:argdo normal gg</code> • Start Vim with all the CSV files loaded</p>
+<h3 id="fix-xml-in-csv-layout">Fix XML in CSV Layout</h3>
+<p>Drop &quot;&quot; at the start of the line. Different for each table, see tables below Drop &quot;&quot; at the end of the line. Different for each table, see tables below Replace the &quot; <code>:set list!</code> and <code>:bufdo %s/&quot;/$/g</code> Change the leading and trailing &quot; back <code>:bufdo normal G0f$r&quot;$F$r&quot;</code></p>
+<h3 id="alternative-way-to-fix-csv-layout">Alternative way to fix CSV Layout</h3>
+<p>Delete the XML column, put the XML in register x <code>0f&lt;T,v$F&gt;t,&quot;xd</code> Remove the &quot; characters <code>:s/&quot;//g</code> Add the XML column back, with XML from register x <code>$F,&quot;xP0</code></p>
+<h2 id="identify-replacement-text">Identify replacement text</h2>
+<p>Verify two &quot; per line <code>:lvimgrep /\&quot;/g *.csv</code> Check domain specific data <code>:lvimgrep /trd403/g *.csv</code> Check URL <code>:lvimgrep /http/g *.csv</code></p>
+<h2 id="manager-layout-processing">Manager Layout Processing</h2>
+<p>Number of leading &quot;&quot; to drop 5 <code>:bufdo normal G0f&quot;ds&quot;</code> Number of trailing &quot;&quot; to drop 10 <code>:bufdo normal G$bds&quot;bbds&quot;bbds&quot;bbds&quot;bbds&quot;bbds&quot;bbds&quot;bbds&quot;bbbbds&quot;</code> Macro a <code>qa 0t&quot;ds&quot;</code> Delete 5 &quot;&quot; sets <code>5@a</code> Plan B Delete all the &quot; before ,&quot;<?xml
+  `:bufdo normal 0vt<hT" :'<,'> s/&quot;//g`</p>
+<p>Take care, not all files have the same amount of leading &quot;&quot; pairs</p>
+<h2 id="finder-set-processing">Finder Set Processing</h2>
+<p>Number of leading &quot;&quot; to drop 4 <code>:bufdo normal G0f&quot;ds&quot;</code> Number of trailing &quot;&quot; to drop 1 <code>:bufdo normal G$bds&quot;</code></p>
+<p>User Menu Layout Processing Number of leading &quot;&quot; to drop 2 <code>:bufdo normal G0f&quot;ds&quot;</code> Number of trailing &quot;&quot; to drop 1 <code>:bufdo normal G$bds&quot;</code></p>
+<h2 id="clear-data-as-necessary-example">Clear data as necessary, example</h2>
+<p>Domain replacement <code>% s/trd403/prd500/g</code> <code>:% s/DOW\/POC/DOW\/NRD103/g</code> External systems URLs <code>:% s/service=OTM_BSRV/service=OTM_NEA_D/g</code> <code>:% s/service=OTM_POC/service=OTM_NEA_D/g</code> Prod URL replacement <code>% s/http\:\/\/preview-otm\.jvservices\.com\:15732/https\:\/\/otm\.dow\.com/g</code></p>
+<h2 id="log-files">Log files</h2>
+<p>Filter Agent lines <code>v/agent\s\+/d</code></p>
+<h2 id="nice-to-haves">Nice to haves</h2>
+<ul>
+<li>Syntax highlighting <code>git clone https://github.com/vestrobaa/syntax-otmlog.git</code></li>
+<li>Folding <code>:set foldmethod=indent</code></li>
+<li>Tags</li>
+<li>Text Objects for Agents and Processes</li>
+</ul>
+<h2 id="xml-result-files">XML result files</h2>
+<p>Check counts <code>:g/count&gt;</code> <code>:v/count&gt;\|&lt;datafilename/d</code> <code>:g/count&gt;0&lt;/d</code></p>
+<p>Need better color scheme for the summary - Red for error counts - Green for all records processed - Orange for skipped</p>
+<p>## Compare two SQL queries</p>
+<ul>
+<li>Copy the first SQL statement, paste in new buffer <code>:n t1.sql</code></li>
+<li>Copy the second SQL statement, paste in new vertical <code>:vsplit t2.sql</code></li>
+</ul>
+<p>Scrub the queries</p>
+<ul>
+<li>Remove whitespace <code>:% s/\s*$//ge</code></li>
+<li>Normalize <code>:% s/ /\r/ge</code> Compare <code>:diffthis</code> for each</li>
+</ul>
+<h2 id="general-1">General</h2>
+<p>Highlight SQL parameters /<code>:\w*[^\s()\]]</code></p>
