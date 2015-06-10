@@ -121,3 +121,6 @@
 [submodule "bundle/capslock"]
 	path = bundle/capslock
 	url = https://github.com/tpope/vim-capslock.git
+[submodule "bundle/netrw-vinegar"]
+	path = bundle/netrw-vinegar
+	url = https://github.com/tpope/vim-vinegar.git
