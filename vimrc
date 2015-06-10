@@ -69,7 +69,7 @@ inoremap <esc> <nop>
 " Testing {{{1
 " Complete {{{2
 " Add spell completion, if in spell mode
-set complete=.,w,b,u,t,i,kspell
+set complete=.,w,b,u,t,kspell
 
 " Python {{{2
 
@@ -135,22 +135,7 @@ fun! IgnoreCustomSpell()
   syn cluster Spell add=UpperCase
 endfun
 
-function! FugitiveStatusLine()
-  " Debugging occasional repeating ::::: in the status line
-  return fugitive#statusline()
-"  let status = fugitive#statusline()
-"  let trimmed = substitute(status, '\[Git(\(.*\))\]', '\1', '')
-"  let trimmed = substitute(trimmed, '\(\w\)\w\+\ze/', '\1', '')
-"  if len(trimmed) == 0
-"    return ""
-"  else
-"    return 'branch:' . trimmed[0:10]
-"  endif
-endfunction
-
-" set statusline=%<%f\ %h%m%r%q\ %{fugitive#statusline()}%=\ %a\ %b:0x%B\ @\ %v,%l/%Lb%n
-" set statusline=%<%f\ %h%m%r%q\ %{fugitive#statusline()}%=\ %a\ %{getline('.')[col('.')-1]}:%b:0x%B\ @\ %v,%l/%Lb%n
-set statusline=%<%f\ %h%m%r%q\ %{FugitiveStatusLine()}%=\ %a\ %{getline('.')[col('.')-1]}:%b:0x%B\ @\ %v,%l/%Lb%n
+set statusline=%<%f\ %h%m%r%q\ %{fugitive#statusline()}%=\ %a\ %{getline('.')[col('.')-1]}:%b:0x%B\ @\ %v,%l/%Lb%n
 
 
 " Mappings {{{2
