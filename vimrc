@@ -321,6 +321,13 @@ let g:syntastic_mode_map = {
   \ "passive_filetypes": ["python"] }
 
 
+" airline {{2
+
+" simple: let g:airline_section_z = ':%b:%B@%v,%lof%Lon%n'
+" Note that the unicode code point is in %b and %B
+let g:airline_section_z = '%{getline(''.'')[col(''.'')-1]}:%b:%B@%v,%lof%Lon%n'
+
+
 " Filetype handling {{{1
 
 if has("autocmd")
