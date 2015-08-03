@@ -337,8 +337,8 @@ let g:airline#extensions#whitespace#enabled = 0
 
 if has("autocmd")
   " Highlight characters past column 120
-  autocmd FileType python highlight Excess ctermbg=DarkGrey guibg=Black
-  autocmd FileType python match Excess /\%120v.*/
+  " autocmd FileType python highlight Excess ctermbg=DarkGrey guibg=Black
+  " autocmd FileType python match Excess /\%120v.*/
   " autocmd FileType python set foldmethod=indent foldlevel=99
   autocmd FileType python set shiftwidth=4 softtabstop=4 tabstop=4 expandtab shiftround omnifunc=pythoncomplete#Complete
   autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber set ai sw=2 sts=2
