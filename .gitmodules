@@ -124,3 +124,6 @@
 [submodule "bundle/netrw-vinegar"]
 	path = bundle/netrw-vinegar
 	url = https://github.com/tpope/vim-vinegar.git
+[submodule "bundle/color-paper"]
+	path = bundle/color-paper
+	url = https://github.com/NLKNguyen/papercolor-theme.git
