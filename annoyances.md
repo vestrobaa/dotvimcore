@@ -1,48 +1,46 @@
-# Annoyances
+Annoyances
+==========
 
-'Grrr'
+_Grrr_
 
-1. Get a good focus writer
-- Revisit GoldenRatio implementation for wide screen monitors
-- Use Vim as note taking application instead of OneNote
-- Keep on committing as wrong ID from the different machines/projects
-    - Check with following: `git status --[system|global|local] --listi`
-- Figure out how to do pan instead of movement. 
-    -   Example: <C-j> will keep the cursor where it is, but scroll the page up (instead of the cursor down)
-- Where's my cursor?! 
-    - `set cursorline`
-    - With unimpaired: `[oc, ]oc, coc, and [ox, ]ox, cox`
-- Google drive integration. Try vim-metarw-gdrive
-- Auto github editing
-- Easy way to use a single Vim instance
-    - This works well in Windows
-    - Create a batch file to open web download in Vim - gVimDownload.bat
+*   Dynamic 120+ highlighter. Current one is to heavy handed
+*   Golden ratio for windows and focus writing for laptop and wide screen
+*   Note taking... OneNote replacement in a secure environment
+*   I want the arrow error icons to be screen width
+*   Pdf viewer
+*   Auto generate vim+plugin helpfiles after pull in various formats
+*   Mix MD and SQL syntax highlighting. See sh-embed and sh-awk
+*   Spell to ignore words with the first letter capitalized
+*   Easy presentation / screen sharing mode in Windows
+*   How to do pan instead of move
 
-    `gvim --servername gvimdownload --remote-silent %1 %*`
 
-- Get dbext to work with Ora!!
-- Auto helpfile publisher
-- Add vim pdf helpfile to standard pull
-- Pdf viewer for Vim?
-- Get a proper SQL syntax formatter
-- Handle sensitive info: gvimrc, vimdb, vimdb.local
-- Mix MD and SQL syntax highlighting. See sh-embed and sh-awk
-- Spelling to ignore words with the first letter capitalized
+_Was Grrr_
 
-- Easy font changing in Windows
-- Easy presentation / screen sharing mode in Windows
-- Recent file list
-- Add old status line section to Airline for navigation mode `getline('.')[col('.')-1]}:%b:0x%B\ @\ %v,%l/%Lb%n`
--
+*   Get a good focus writer - [goyo](https://github.com/junegunn/goyo.vim)
+*   Where's my cursor?! - `set cursorline`, or with [unimpaired](https://github.com/tpope/vim-unimpaired): `[oc, ]oc, coc, and [ox, ]ox, cox`
+*   Google drive integration - [vim-metarw-gdrive](https://github.com/mattn/vim-metarw-gdrive)
+*   Easy way to use a single Vim instance in Windows
+    *   Create a batch file to open web download in Vim: `gVimDownload.bat`
+    *   `gvim --servername gvimdownload --remote-silent %1 %*`
+*   Easy font changing in Windows - [Ctrl +/-](http://vim.wikia.com/wiki/Change_font_size_quickly)
+    *   Add old status line section to Airline for navigation mode
+    *   `let g:airline_section_z = '%{getline(''.'')[col(''.'')-1]}:%b:%B@%v,%l/%Lb%n'`
 
-## Python
 
-- Python autocomplete not working
-- Python code coverage not installed
-- Want to switch easily to nosetest
-- YouCompleteMe alternative. Not multi OS friendly
+Python
+------
 
-## Django
+*   Python coding is not flowing!
+*   Auto indent is strange
+*   Comments must be typed over 80 chars to format correctly
+*   Get pytest like context testing macros
+*   Switch seamlessly between unittest, nosetest and PyTest
+*   Need more autocomplete training!
 
-- CtrlP extention for model/view/url/test/admin
-- CtrlP extension for folders templates / template tags / management
+
+Other Languages
+---------------
+
+*   Rst features in md
+*   SQL syntax formatter
