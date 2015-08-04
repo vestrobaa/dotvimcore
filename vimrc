@@ -306,7 +306,9 @@ let g:pymode_virtualenv = 0
 let g:pymode_options = 1
 let g:pymode_folding = 1
 let g:pymode_options_colorcolumn = 0
-let g:pymode_quickfix_maxheight = 30
+let g:pymode_lint_cwindow = 0
+let g:pymode_quickfix_minheight = 6
+let g:pymode_quickfix_maxheight = 3
 " Stackoverflow: YouCompleteMe freezes when used with python-mode
 let g:pymode_rope_complete_on_dot = 0
 " Keep completion active, YouCompleteMe disabled
