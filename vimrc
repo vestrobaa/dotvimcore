@@ -251,7 +251,10 @@ let g:csv_nomap_cr = 1
 " CtrlP {{{2
 
 let g:ctrlp_match_window = 'max:30'
-let g:ctrlp_custom_ignore = '\v%(/\.%(git|hg|svn)|/venv|/__pycache__|\.%(class|o|png|jpg|jpeg|bmp|tar|jar|tgz|deb|zip|zipx)$|/target/)'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.%(git|hg|svn|venv|__pycache__)$',
+  \ 'file': '\v\.%(exe|so|dll|class|o|png|jpg|jpeg|bmp|tar|jar|tgz|deb|zip|zipx|pyc)$',
+  \ }
 let g:ctrlp_switch_buffer = 'E'
 let g:ctrlp_working_path_mode = 'rc'
 let g:ctrlp_root_markers = ['readme.md']
@@ -327,15 +330,17 @@ let g:syntastic_mode_map = {
 
 " simple: let g:airline_section_z = ':%b:%B@%v,%lof%Lon%n'
 " Note that the unicode code point is in %b and %B
-let g:airline_section_z = '%{getline(''.'')[col(''.'')-1]}:%b:%B@%v,%lof%Lon%n'
+" let g:airline_section_z = '%{getline(''.'')[col(''.'')-1]}:%b:%B@%v,%lof%Lon%n'
+let g:airline_section_z = '%{getline(''.'')[col(''.'')-1]}:%b:%B@%v,%l/%Lb%n'
+let g:airline#extensions#whitespace#enabled = 0
 
 
 " Filetype handling {{{1
 
 if has("autocmd")
   " Highlight characters past column 120
-  autocmd FileType python highlight Excess ctermbg=DarkGrey guibg=Black
-  autocmd FileType python match Excess /\%120v.*/
+  " autocmd FileType python highlight Excess ctermbg=DarkGrey guibg=Black
+  " autocmd FileType python match Excess /\%120v.*/
   " autocmd FileType python set foldmethod=indent foldlevel=99
   autocmd FileType python set shiftwidth=4 softtabstop=4 tabstop=4 expandtab shiftround omnifunc=pythoncomplete#Complete
   autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber set ai sw=2 sts=2
