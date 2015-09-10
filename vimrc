@@ -57,6 +57,9 @@ set noswapfile
 set nobackup
 set nowritebackup
 
+" Speed up processing long lines
+set synmaxcol=120
+
 " Custom {{{1
 
 let mapleader = ","
