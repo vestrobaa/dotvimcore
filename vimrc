@@ -262,7 +262,7 @@ let g:ctrlp_switch_buffer = 'E'
 let g:ctrlp_working_path_mode = 'rc'
 let g:ctrlp_root_markers = ['readme.md']
 let g:ctrlp_open_multiple_files = '2vjr'
-let g:ctlrp_user_command = ['.git', 'cd %s && git ls-files']
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
 
 map <leader>fb :CtrlPBuffer<cr>
 map <leader>ff :CtrlP<cr>
