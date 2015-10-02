@@ -100,16 +100,16 @@ if has("multi_byte")
     set fillchars=vert::,fold:\ ,stl:\ ,stlnc::
   endif
 
-  map <Left> :echo '←←←'<cr>
-  map <Right> :echo '→→→'<cr>
-  map <Up> :echo '↑↑↑'<cr>
-  map <Down> :echo '↓↓↓'<cr>
+  map <Left> :echo repeat('←', winwidth(0)/4)<cr>
+  map <Right> :echo repeat('→', winwidth(0)/4)<cr>
+  map <Up> :echo repeat('↑', winwidth(0)/4)<cr>
+  map <Down> :echo repeat('↓', winwidth(0)/4)<cr>
 else
   set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
-  map <Left> :echo '<<<'<cr>
-  map <Right> :echo '>>>'<cr>
-  map <Up> :echo '^^^'<cr>
-  map <Down> :echo '___'<cr>
+  map <Left> :echo repeat('<', winwidth(0)/4)<cr>
+  map <Right> :echo repeat('>', winwidth(0)/4)<cr>
+  map <Up> :echo repeat('^', winwidth(0)/4)<cr>
+  map <Down> :echo repeat('_', winwidth(0)/4)<cr>
 endif
 
 
