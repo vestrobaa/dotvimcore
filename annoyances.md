@@ -3,6 +3,7 @@ Annoyances
 
 _Grrr_
 
+*   C-G does not show file path
 *   Dynamic 120+ highlighter. Current one is to heavy handed
 *   Golden ratio for windows and focus writing for laptop and wide screen
 *   Note taking... OneNote replacement in a secure environment
