@@ -70,22 +70,17 @@ inoremap <esc> <nop>
 
 
 " Testing {{{1
+" Timeout {{{2
+
+set timeoutlen=500 " Time to wait for a command
+
 " Complete {{{2
 " Add spell completion, if in spell mode
 set complete=.,w,b,u,t,kspell
 
 " Python {{{2
 
-" Execute the tests
-nmap <silent><Leader>uf <Esc>:Pytest file<CR>
-nmap <silent><Leader>uc <Esc>:Pytest class<CR>
-nmap <silent><Leader>um <Esc>:Pytest method<CR>
-" cycle through test errors
-" Impaired extention?
-nmap <silent><Leader>un <Esc>:Pytest next<CR>
-nmap <silent><Leader>up <Esc>:Pytest previous<CR>
-nmap <silent><Leader>ue <Esc>:Pytest error<CR>
-
+" Need mappings for the standard unittest
 
 " List characters {{{2
 
@@ -100,17 +95,18 @@ if has("multi_byte")
     set fillchars=vert::,fold:\ ,stl:\ ,stlnc::
   endif
 
-  map <Left> :echo '←←←'<cr>
-  map <Right> :echo '→→→'<cr>
-  map <Up> :echo '↑↑↑'<cr>
-  map <Down> :echo '↓↓↓'<cr>
+  map <Left> :echo repeat('←', winwidth(0)/4)<cr>
+  map <Right> :echo repeat('→', winwidth(0)/4)<cr>
+  map <Up> :echo repeat('↑', winwidth(0)/4)<cr>
+  map <Down> :echo repeat('↓', winwidth(0)/4)<cr>
 else
   set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
-  map <Left> :echo '<<<'<cr>
-  map <Right> :echo '>>>'<cr>
-  map <Up> :echo '^^^'<cr>
-  map <Down> :echo '___'<cr>
+  map <Left> :echo repeat('<', winwidth(0)/4)<cr>
+  map <Right> :echo repeat('>', winwidth(0)/4)<cr>
+  map <Up> :echo repeat('^', winwidth(0)/4)<cr>
+  map <Down> :echo repeat('_', winwidth(0)/4)<cr>
 endif
+
 
 
 " Windows {{{2
@@ -167,6 +163,13 @@ nmap <silent><F11> :call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<
 " Insert file name
 imap <Leader>fn <c-r>=expand('%:t:r')<cr>
 
+" Keep search matches in the middle of the window {{{2
+nnoremap n nzzzv
+nnoremap N Nzzzv
+"nnoremap * *zzzv
+"nnoremap # #zzzv
+nnoremap g* g*zzzv
+nnoremap g# g#zzzv
 
 " Colors {{{2
 
@@ -180,58 +183,6 @@ else
   colo molokai
 endif
 
-
-" Django {{{2
-
-" From https://code.djangoproject.com/wiki/UsingVimWithDjango
-
-" Django mapping {{{3
-
-" Vim to switch files, tmux to switch sessions/tags
-let g:last_relative_dir = ''
-nnoremap <leader>dm :call RelatedFile ("models.py")<cr>
-nnoremap <leader>dv :call RelatedFile ("views.py")<cr>
-nnoremap <leader>du :call RelatedFile ("urls.py")<cr>
-nnoremap <leader>da :call RelatedFile ("admin.py")<cr>
-nnoremap <leader>dt :call RelatedFile ("tests.py")<cr>
-" nnoremap <leader>dtm :call RelatedFile ("templates/")<cr>
-" nnoremap <leader>dtt :call RelatedFile ("templatetags/")<cr>
-" nnoremap <leader>dman :call RelatedFile ("management/")<cr>
-nnoremap <leader>ds :e settings.py<cr>
-" nnoremap <leader>dpu :e urls.py<cr>
-
-fun! RelatedFile(file)
-    "This is to check that the directory looks djangoish
-    if filereadable(expand("%:h"). '/models.py') || isdirectory(expand("%:h") . "/templatetags/")
-        exec "edit %:h/" . a:file
-        let g:last_relative_dir = expand("%:h") . '/'
-        return ''
-    endif
-    if g:last_relative_dir != ''
-        exec "edit " . g:last_relative_dir . a:file
-        return ''
-    endif
-    echo "Cant determine where relative file is : " . a:file
-    return ''
-endfun
-
-fun! SetAppDir()
-    if filereadable(expand("%:h"). '/models.py') || isdirectory(expand("%:h") . "/templatetags/")
-        let g:last_relative_dir = expand("%:h") . '/'
-        return ''
-    endif
-endfun
-autocmd BufEnter *.py call SetAppDir()
-
-" Django surround {{{3
-let b:surround_{char2nr("v")} = "{{ \r }}"
-let b:surround_{char2nr("{")} = "{{ \r }}"
-let b:surround_{char2nr("%")} = "{% \r %}"
-let b:surround_{char2nr("b")} = "{% block \1block name: \1 %}\r{% endblock \1\1 %}"
-let b:surround_{char2nr("i")} = "{% if \1condition: \1 %}\r{% endif %}"
-let b:surround_{char2nr("w")} = "{% with \1with: \1 %}\r{% endwith %}"
-let b:surround_{char2nr("f")} = "{% for \1for loop: \1 %}\r{% endfor %}"
-let b:surround_{char2nr("c")} = "{% comment %}\r{% endcomment %}"
 
 " Plugin settings and mapped keys {{{1
 
@@ -297,15 +248,6 @@ hi CtrlSpaceStatus   ctermfg=230  ctermbg=234  cterm=NONE
 nnoremap <leader>tf :!ctags -R --exclude=*.git --tag-relative=yes *<cr>
 nnoremap <leader>tg :!ctags -R -f ./.git/tags --tag-relative=yes --exclude=*.git *<cr>
 
-
-" YouCompleteMe {{{2
-
-
-" let g:ycm_path_to_python_interpreter = '/usr/bin/python'
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_autoclose_preview_windows_after_completion = 1
-
-
 " python-mode {{{2
 
 " Add check to use python3 if it's in versions and installed
@@ -316,9 +258,7 @@ let g:pymode_options_colorcolumn = 0
 let g:pymode_lint_cwindow = 0
 let g:pymode_quickfix_minheight = 6
 let g:pymode_quickfix_maxheight = 3
-" Stackoverflow: YouCompleteMe freezes when used with python-mode
 let g:pymode_rope_complete_on_dot = 0
-" Keep completion active, YouCompleteMe disabled
 "let g:pymode_rope_completion = 0
 
 
@@ -329,15 +269,13 @@ let g:syntastic_mode_map = {
   \ "active_filetypes": [],
   \ "passive_filetypes": ["python"] }
 
-
-" airline {{2
+" airline {{{2
 
 " simple: let g:airline_section_z = ':%b:%B@%v,%lof%Lon%n'
 " Note that the unicode code point is in %b and %B
 " let g:airline_section_z = '%{getline(''.'')[col(''.'')-1]}:%b:%B@%v,%lof%Lon%n'
 let g:airline_section_z = '%{getline(''.'')[col(''.'')-1]}:%b:%B@%v,%l/%Lb%n'
 let g:airline#extensions#whitespace#enabled = 0
-
 
 " Filetype handling {{{1
 
