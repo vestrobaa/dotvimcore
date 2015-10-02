@@ -167,6 +167,13 @@ nmap <silent><F11> :call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<
 " Insert file name
 imap <Leader>fn <c-r>=expand('%:t:r')<cr>
 
+" Keep search matches in the middle of the window
+nnoremap n nzzzv
+nnoremap N Nzzzv
+"nnoremap * *zzzv
+"nnoremap # #zzzv
+nnoremap g* g*zzzv
+nnoremap g# g#zzzv
 
 " Colors {{{2
 
