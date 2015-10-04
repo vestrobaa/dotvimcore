@@ -70,10 +70,6 @@ inoremap <esc> <nop>
 
 
 " Testing {{{1
-" Timeout {{{2
-
-set timeoutlen=500 " Time to wait for a command
-
 " Complete {{{2
 " Add spell completion, if in spell mode
 set complete=.,w,b,u,t,kspell
@@ -225,11 +221,10 @@ map <leader>fq :CtrlPQuickfix<cr>
 
 " CtrlSpace {{{2
 
-" TODO: Try default mapping of <leader><space>
-" let g:ctrlspace_default_mapping_key=<leader><space>
 " TODO: May need to default unicode to 0 for windows
 " TODO: May need to switch off ruby for windows
 
+let g:ctrlspace_default_mapping_key = "<leader>\<space>"
 let g:ctrlspace_height = 3
 let g:ctrlspace_unicode_font = 1
 let g:ctrlspace_max_files = 750
@@ -260,7 +255,6 @@ let g:pymode_quickfix_minheight = 6
 let g:pymode_quickfix_maxheight = 3
 let g:pymode_rope_complete_on_dot = 0
 "let g:pymode_rope_completion = 0
-
 
 " syntastic {{{2
 
