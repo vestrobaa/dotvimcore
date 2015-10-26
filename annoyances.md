@@ -3,15 +3,17 @@ Annoyances
 
 _Grrr_
 
+*   Wow, python programming is so slow. Win machine takes 10 secs for a backspace
+*   CtrlP mods: <leader>fr - show files, <leader>fg - show git files, <leader>fb show buffs
 *   C-G does not show file path
 *   Dynamic 120+ highlighter. Current one is to heavy handed
 *   Golden ratio for windows and focus writing for laptop and wide screen
 *   Note taking... OneNote replacement in a secure environment
-*   I want the arrow error icons to be screen width
 *   Pdf viewer
 *   Auto generate vim+plugin helpfiles after pull in various formats
 *   Mix MD and SQL syntax highlighting. See sh-embed and sh-awk
 *   Spell to ignore words with the first letter capitalized
+    *   Fix IgnoreCustomSpell()
 *   Easy presentation / screen sharing mode in Windows
 *   How to do pan instead of move
 
@@ -27,6 +29,8 @@ _Was Grrr_
 *   Easy font changing in Windows - [Ctrl +/-](http://vim.wikia.com/wiki/Change_font_size_quickly)
     *   Add old status line section to Airline for navigation mode
     *   `let g:airline_section_z = '%{getline(''.'')[col(''.'')-1]}:%b:%B@%v,%l/%Lb%n'`
+*   I want the arrow error icons to be screen width
+    *   map <Left> :echo repeat('←', winwidth(0)/4)<cr>
 
 
 Python
