@@ -11,6 +11,9 @@ _Grrr_
 *   Note taking... OneNote replacement in a secure environment
 *   Pdf viewer
 *   Auto generate vim+plugin helpfiles after pull in various formats
+*   Dynamic 120+ highlighter. Current one is to heavy handed
+*   Golden ratio for windows and focus writing for laptop and wide screen
+*   Note taking... OneNote replacement in a secure environment
 *   Mix MD and SQL syntax highlighting. See sh-embed and sh-awk
 *   Spell to ignore words with the first letter capitalized
     *   Fix IgnoreCustomSpell()
@@ -20,6 +23,12 @@ _Grrr_
 
 _Was Grrr_
 
+*   Auto generate Vim+plug-in help files after pull in various formats
+    *   :Helptags
+*   C-G does not show file path
+    *   Use 1 Ctrl-G, or :f Also see help CTRL-G for more variations
+*   I want the arrow error icons to be screen width
+    *   map <Left> :echo repeat('←', winwidth(0)/4)<cr>
 *   Get a good focus writer - [goyo](https://github.com/junegunn/goyo.vim)
 *   Where's my cursor?! - `set cursorline`, or with [unimpaired](https://github.com/tpope/vim-unimpaired): `[oc, ]oc, coc, and [ox, ]ox, cox`
 *   Google drive integration - [vim-metarw-gdrive](https://github.com/mattn/vim-metarw-gdrive)
