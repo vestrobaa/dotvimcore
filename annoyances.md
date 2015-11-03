@@ -3,6 +3,7 @@ Annoyances
 
 _Grrr_
 
+*   Status bar to show git varsion (tag) instead of sha1
 *   Wow, python programming is so slow. Win machine takes 10 secs for a backspace
 *   CtrlP mods: <leader>fr - show files, <leader>fg - show git files, <leader>fb show buffs
 *   C-G does not show file path
