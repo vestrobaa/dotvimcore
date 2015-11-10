@@ -127,3 +127,6 @@
 [submodule "bundle/color-paper"]
 	path = bundle/color-paper
 	url = https://github.com/NLKNguyen/papercolor-theme.git
+[submodule "bundle/table-mode"]
+	path = table-mode
+	url = https://github.com/dhruvasagar/vim-table-mode.git

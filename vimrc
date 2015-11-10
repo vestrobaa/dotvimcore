@@ -271,6 +271,11 @@ let g:syntastic_mode_map = {
 let g:airline_section_z = '%{getline(''.'')[col(''.'')-1]}:%b:%B@%v,%l/%Lb%n'
 let g:airline#extensions#whitespace#enabled = 0
 
+" table-mode {{{2
+
+let g:table_mode_corner_corner="+"
+let g:table_mode_header_fillchar="="
+
 " Filetype handling {{{1
 
 if has("autocmd")
