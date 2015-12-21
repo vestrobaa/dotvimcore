@@ -31,9 +31,6 @@
 [submodule "bundle/color-molokai"]
 	path = bundle/color-molokai
 	url = https://github.com/tomasr/molokai.git
-[submodule "bundle/unimpaired"]
-	path = bundle/unimpaired
-	url = https://github.com/tpope/vim-unimpaired.git
 [submodule "bundle/syntax-csv"]
 	path = bundle/syntax-csv
 	url = https://github.com/vim-scripts/csv.vim.git
@@ -82,9 +79,6 @@
 [submodule "bundle/color-paper"]
 	path = bundle/color-paper
 	url = https://github.com/NLKNguyen/papercolor-theme.git
-[submodule "bundle/table-mode"]
-	path = table-mode
-	url = https://github.com/dhruvasagar/vim-table-mode.git
 [submodule "bundle/python-mode"]
 	path = bundle/python-mode
 	url = https://github.com/klen/python-mode.git
