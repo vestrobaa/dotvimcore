@@ -85,3 +85,6 @@
 [submodule "bundle/table-mode"]
 	path = table-mode
 	url = https://github.com/dhruvasagar/vim-table-mode.git
+[submodule "bundle/python-mode"]
+	path = bundle/python-mode
+	url = https://github.com/klen/python-mode.git
