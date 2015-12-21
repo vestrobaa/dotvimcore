@@ -46,9 +46,6 @@
 [submodule "bundle/syntax-hexHighlight"]
 	path = bundle/syntax-hexHighlight
 	url = https://github.com/vim-scripts/hexHighlight.vim.git
-[submodule "bundle/color-pyte"]
-	path = bundle/color-pyte
-	url = https://github.com/vim-scripts/pyte.git
 [submodule "bundle/focus-goyo"]
 	path = bundle/focus-goyo
 	url = https://github.com/junegunn/goyo.vim.git
