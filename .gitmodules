@@ -85,9 +85,6 @@
 [submodule "bundle/pytest"]
 	path = bundle/pytest
 	url = https://github.com/alfredodeza/pytest.vim.git
-[submodule "bundle/pydoc"]
-	path = bundle/pydoc
-	url = https://github.com/fs111/pydoc.vim.git
 [submodule "bundle/repeat"]
 	path = bundle/repeat
 	url = https://github.com/tpope/vim-repeat.git
