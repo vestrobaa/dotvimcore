@@ -31,9 +31,6 @@
 [submodule "bundle/color-molokai"]
 	path = bundle/color-molokai
 	url = https://github.com/tomasr/molokai.git
-[submodule "bundle/color-seoul256"]
-	path = bundle/color-seoul256
-	url = https://github.com/junegunn/seoul256.vim.git
 [submodule "bundle/unimpaired"]
 	path = bundle/unimpaired
 	url = https://github.com/tpope/vim-unimpaired.git
