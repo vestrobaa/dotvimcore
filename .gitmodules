@@ -76,9 +76,6 @@
 [submodule "bundle/color-base16"]
 	path = bundle/color-base16
 	url = https://github.com/chriskempson/base16-vim.git
-[submodule "bundle/repeat"]
-	path = bundle/repeat
-	url = https://github.com/tpope/vim-repeat.git
 [submodule "bundle/focus-airline"]
 	path = bundle/focus-airline
 	url = https://github.com/bling/vim-airline.git
