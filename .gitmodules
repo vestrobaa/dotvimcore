@@ -79,9 +79,6 @@
 [submodule "bundle/focus-airline"]
 	path = bundle/focus-airline
 	url = https://github.com/bling/vim-airline.git
-[submodule "bundle/color-primary"]
-	path = bundle/color-primary
-	url = https://github.com/google/vim-colorscheme-primary.git
 [submodule "bundle/capslock"]
 	path = bundle/capslock
 	url = https://github.com/tpope/vim-capslock.git
