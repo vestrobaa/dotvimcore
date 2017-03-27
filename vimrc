@@ -264,7 +264,7 @@ nnoremap <leader>tg :!ctags -R -f ./.git/tags --tag-relative=yes --exclude=*.git
 " python-mode {{{2
 
 " Add check to use python3 if it's in versions and installed
-let g:pymode_virtualenv = 0
+let g:pymode_virtualenv = 1
 let g:pymode_options = 1
 let g:pymode_folding = 1
 let g:pymode_options_colorcolumn = 0
@@ -272,6 +272,7 @@ let g:pymode_lint_cwindow = 0
 let g:pymode_quickfix_minheight = 6
 let g:pymode_quickfix_maxheight = 3
 let g:pymode_rope_complete_on_dot = 0
+command RopeToggle let g:pymode_rope = g:pymode_rope ? 0 : 1
 "let g:pymode_rope_completion = 0
 
 " syntastic {{{2

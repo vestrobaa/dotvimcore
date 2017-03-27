@@ -29,7 +29,8 @@ if has("unix")
     endif
 
 elseif has("win32") ||  has("win64")
-    set guifont=Consolas:h10:cANSI
+    " set guifont=Consolas:h10:cANSI
+    set guifont=Inconsolata:h12:cANSI
 
     if &background == "dark"
         hi normal guibg=black
