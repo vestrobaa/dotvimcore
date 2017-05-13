@@ -1,61 +1,24 @@
 Annoyances
 ==========
 
-_Grrr_
+Grrr
+----
 
-*   Status bar to show git varsion (tag) instead of sha1
-*   Wow, python programming is so slow. Win machine takes 10 secs for a backspace
-*   CtrlP mods: <leader>fr - show files, <leader>fg - show git files, <leader>fb show buffs
-*   C-G does not show file path
-*   Dynamic 120+ highlighter. Current one is to heavy handed
-*   Golden ratio for windows and focus writing for laptop and wide screen
-*   Note taking... OneNote replacement in a secure environment
-*   Pdf viewer
-*   Auto generate vim+plugin helpfiles after pull in various formats
-*   Dynamic 120+ highlighter. Current one is to heavy handed
-*   Golden ratio for windows and focus writing for laptop and wide screen
-*   Note taking... OneNote replacement in a secure environment
-*   Mix MD and SQL syntax highlighting. See sh-embed and sh-awk
-*   Spell to ignore words with the first letter capitalized
-    *   Fix IgnoreCustomSpell()
-*   Easy presentation / screen sharing mode in Windows
-*   How to do pan instead of move
+*   File navigation window keeps popping up, can't get rid of it
+*   Too much addins
+*   Pymode hinders as much as it helps
+*   Auto icloud
+*   Where's the V8 feature plugins?
+*   Redo font/color on the different platforms
+*   Fix the diff window settings
+*   Bite the bullet and switch to dbext
+*   Vim as script runner?
+*   Restart the vim twitter config
 
+Elusive goals
+-------------
 
-_Was Grrr_
-
-*   Auto generate Vim+plug-in help files after pull in various formats
-    *   :Helptags
-*   C-G does not show file path
-    *   Use 1 Ctrl-G, or :f Also see help CTRL-G for more variations
-*   I want the arrow error icons to be screen width
-    *   map <Left> :echo repeat('←', winwidth(0)/4)<cr>
-*   Get a good focus writer - [goyo](https://github.com/junegunn/goyo.vim)
-*   Where's my cursor?! - `set cursorline`, or with [unimpaired](https://github.com/tpope/vim-unimpaired): `[oc, ]oc, coc, and [ox, ]ox, cox`
-*   Google drive integration - [vim-metarw-gdrive](https://github.com/mattn/vim-metarw-gdrive)
-*   Easy way to use a single Vim instance in Windows
-    *   Create a batch file to open web download in Vim: `gVimDownload.bat`
-    *   `gvim --servername gvimdownload --remote-silent %1 %*`
-*   Easy font changing in Windows - [Ctrl +/-](http://vim.wikia.com/wiki/Change_font_size_quickly)
-    *   Add old status line section to Airline for navigation mode
-    *   `let g:airline_section_z = '%{getline(''.'')[col(''.'')-1]}:%b:%B@%v,%l/%Lb%n'`
-*   I want the arrow error icons to be screen width
-    *   map <Left> :echo repeat('←', winwidth(0)/4)<cr>
-
-
-Python
-------
-
-*   Python coding is not flowing!
-*   Auto indent is strange
-*   Comments must be typed over 80 chars to format correctly
-*   Get pytest like context testing macros
-*   Switch seamlessly between unittest, nosetest and PyTest
-*   Need more autocomplete training!
-
-
-Other Languages
----------------
-
-*   Rst features in md
-*   SQL syntax formatter
+*   Golden ratio
+*   Focus views
+*   Note taking like OneNote
+*   Keeping Vim fast and multi platform
