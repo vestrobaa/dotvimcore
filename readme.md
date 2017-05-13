@@ -1,8 +1,6 @@
 [Vim][1] [configuration][5]
 ====================
 
-From [GitHub][6]
-
     git clone git://github.com/vestrobaa/dotvimcore.git ~/.vim 
     ln -s ~/.vim/vimrc ~/.vimrc
     ln -s ~/.vim/gvimrc ~/.gvimrc
@@ -86,7 +84,7 @@ Surround text
 -   ys$" - Yank and surround the rest of the line with "  
 -   <visual>S" - Surround makred text with "
 
-DbExt
+Database
 
 -   :DBPromptForBufferParameters - Connect to the database
 -   <leader>se[ |l] - SQL execute ( )visual selection, (l)ine, 
@@ -95,8 +93,7 @@ DbExt
 -   <leader>sl[t|v|p|c] - SQL list (t)able, (v)iew, (p)rocedure, (c)olumn
 -   <leader>sh - SQL history
 
-Exuberant Ctags
----------------
+Tags
 
 -   Generate tags in root folder `<leader>tf`
 -   Generate tags in git folder `<leader>tg`
@@ -107,7 +104,6 @@ Exuberant Ctags
 
 
 Python-mode
------------
 
 -   Lint toggle `PymodeLintToggle`
 -   Rope toggle         `RopeToggle`
@@ -117,7 +113,6 @@ Python-mode
 -   Text object Class   `C`, and `[[, [C, ]C, ]]`
 
 Completion
-----------
 
 -   Previous match `<c-p>`
 -   Next match `<c-n>`
@@ -127,8 +122,8 @@ Completion
 -   Complete with line          `<c-x><c-l>`
 
 
-Sub modules
------------
+Submodules
+----------
 
 Upgrade
 
