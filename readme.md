@@ -1,17 +1,13 @@
-#VIM
+[Vim][1] [configuration][5]
+====================
 
-My [Vim][1] [configuration][5]
-
-
-##Install Vim configuration
-
-Install the configuration files from [GitHub][6]
+From [GitHub][6]
 
     git clone git://github.com/vestrobaa/dotvimcore.git ~/.vim 
     ln -s ~/.vim/vimrc ~/.vimrc
     ln -s ~/.vim/gvimrc ~/.gvimrc
 
-To install on Windows:
+On Windows
 
     Configure environment variable home=%userprofile%
     git clone git://github.com/vestrobaa/dotvimcore.git %userprofile%\vimfiles
@@ -20,43 +16,43 @@ To install on Windows:
     mklink /h _gvimrc %userprofile%\vimfiles\gvimrc
 
 
-##Install Vim plugins
+Plugins
+-------
+
+- [CtrlP][20] fuzzy file finder
+- [Unimpaired][22] navigation
+- [Capslock][83] soft caps
+- [Surround][82] text object markup
+- [Metarw][120], [git][122] and [gdrive][121] cloud paths
+- [Goyo][110] focus
+- [Gundo][32] undo tree
+- [Paper][100], [bad wolf][102] and [base16][101] colors
+- [Syntastic][50] syntax checker
+- 
+
+1. Languages
+
+    - [Markdown][40] [plugin][41], [color][42]. Preview in [Chrome][2]
+    - [Python][52] [syntax][50], [style][51]
+    - [SQL][70]
+1. External tools
+    - Pandoc
+    - [Exuberant Ctags][90]
+    - Cscope
+
+Initialize
 
     cd ~/.vim
     git submodule init
     git submodule update
 
-Or upgrade to the latest version of each
+Upgrade
 
+    git submodule foreach git pull origin master
     git submodule foreach git submodule init
     git submodule foreach git submodule update
-    git submodule foreach git pull origin master
 
-
-##Vim Plugins
-
-I'm using the following Vim plugins:
-
-1. General
-    - [CtrlP][20] fuzzy file finder
-    - [Unimpaired][22]
-    - [Mustang][80], [distinguished][81] color schemes
-    - [Surround][82] text tagging
-    - Must have [Twitter][83]!
-1. Version Control
-    - [Git][30] [fugitive][31] plugin, [color][32]
-    - [Gundo][32] vim undo tree
-1. Languages
-    - [Markdown][40] [plugin][41], [color][42]. Preview in [Chrome][2]
-    - [Python][52] [syntax][50], [style][51]
-    - [Ruby][60] on [Rails][61] [plugin][62]. Syntax helpers for [end][63] and [cucumber][64].
-    - [SQL][70]
-1. External tools
-    - [Exuberant Ctags][90]
-    - Markdown to html: Put [Markdown.pl][3] in the path or in /usr/local/bin
-
-
-##Plugin install process with ~/.vim in Git
+Add
 
     cd ~/.vim
     git submodule init
@@ -64,30 +60,26 @@ I'm using the following Vim plugins:
     git commit -m 'Added submodule whatever'
     git push
 
-##Plugin removal process
-
-Remove the plugin files in the bundle subfolder. If you are tracking your Vim configuration in Git, use:
+Remove
 
     vim .git/config # remove the submodule x's lines
     vim .gitmodules # remove the submudule x's lines
     rm -rf .git/modules/bundle/x
     git rm --cached bundle/x (no trailing slash, not the right spot in the sequence...)
     rm -rf bundle/x
-    Commit
+    git commit
 
 
-##Usage
-
-##Leader roadmap
+Usage
+=====
 
 Unit test: `<leader>u`
 Functional tests: `<leader>b?`
 Formatting: `<leader>f`
 Custom CSV: `<leader>cs`
+Format XML: `<leader>fx`
 
-##Plugins
 
-CtrlP: `<c-p>`  
 Markdown html expand: `<leader>md`  
 Gundo file histroy: `<leader>g`  
 Surround text:  
@@ -98,7 +90,11 @@ Surround text:
     yss" - Yank and surround the line with "  
     ys$" - Yank and surround the rest of the line with "  
 
-### DbExt:
+CtrlP
+-----
+
+DbExt
+-----
 
     :DBPromptForBufferParameters - Connect to the database
     <leader>se[ |l] - SQL execute ( )visual selection, (l)ine, 
@@ -107,17 +103,19 @@ Surround text:
     <leader>sl[t|v|p|c] - SQL list (t)able, (v)iew, (p)rocedure, (c)olumn
     <leader>sh - SQL history
 
-### Exuberant Ctags:
+Exuberant Ctags
+---------------
 
 Generate tags   `<leader>tf` to generate tags in the root folder
 Generate tags   `<leader>tg` to generate tags in the git folder
 Generate tags   `ctags -R .` to generate tags manually
-Jump to a tag   `<c-]>` or back `<c-t>`  
-Code options    `<c-x><c-o>`  
-Code completion `<c-x><c-]>`  
+Jump to a tag   `<c-]>` or back `<c-t>`
+Code options    `<c-x><c-o>`
+Code completion `<c-x><c-]>`
 
 
-### Python-mode
+Python-mode
+-----------
 
 Lint toggle         `PymodeLintToggle`
 Lint auto fix       `PymodeLintAuto`
@@ -127,7 +125,8 @@ Pydoc               `K`
 Text object Method  `M`, and `[[, [M, ]M, ]]`
 Text object Class   `C`, and `[[, [C, ]C, ]]`
 
-### Completion
+Completion
+----------
 
 Complete with prev match    `<c-p>`
 Complete with next match    `<c-n>`
@@ -142,7 +141,7 @@ Complete with line          `<c-x><c-l>`
 [3]: http://daringfireball.net/projects/markdown/ 
 [4]: https://github.com/tpope
 [6]: http://github.com
-[20]: https://github.com/kien/ctrlp.vim 
+[20]: http://kien.github.io/ctrlp.vim/
 [21]: https://github.com/Lokaltog/vim-easymotion
 [22]: https://github.com/tpope/vim-unimpaired
 [30]: http://http://git-scm.com/
@@ -155,14 +154,19 @@ Complete with line          `<c-x><c-l>`
 [50]: https://github.com/scrooloose/syntastic
 [51]: https://github.com/vim-scripts/pep8
 [52]: http://www.python.org/
-[60]: http://www.ruby-lang.org
-[61]: http://rubyonrails.org
-[62]: https://github.com/tpope/vim-rails
 [63]: http://github.com/tpope/vim-endwise
 [64]: http://github.com/tpope/vim-cucumber
 [70]: https://github.com/vim-scripts/dbext.vim
 [80]: https://github.com/croaker/mustang-vim
 [81]: https://github.com/Lokaltog/vim-distinguished
 [82]: https://github.com/tpope/vim-surround.git
-[83]: https://github.com/basyura/TweetVim
+[83]: https://github.com/tpope/vim-capslock.git
 [90]: http://ctags.sourceforge.net
+[100]: https://github.com/NLKNguyen/papercolor-theme.git
+[101]: https://github.com/chriskempson/base16-vim.git
+[102]: https://github.com/sjl/badwolf.git
+[110]: https://github.com/junegunn/goyo.vim.git
+[120]: https://github.com/kana/vim-metarw.git
+[121]: https://github.com/mattn/vim-metarw-gdrive.git
+[122]: https://github.com/kana/vim-metarw-git.git
+[123]: https://github.com/tpope/vim-vinegar.git
