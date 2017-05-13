@@ -138,8 +138,6 @@ set statusline=%<%f\ %h%m%r%q\ %{fugitive#statusline()}%=\ %a\ %{getline('.')[co
 " Fix XML (pretty print)
 map <leader>fx :1,%s/>\s*</>\r</g<cr>gg=G
 
-" Fix SQL (wtf, where's the macro?!)
-
 " Old csv fix macro
 nmap <leader>csv :%s/\s\+$//g<cr>:%le<cr>:4,$ v/^"/normal kA jkJ/g<cr>
 " Join lines in CSV data section that does not start with a quote to the previous line
@@ -153,17 +151,12 @@ nmap <silent><Leader>cd :lcd %:h<cr>:pwd<cr>
 " Agent matching
 nmap <leader>af :search('\([0-9]*\)[ \t]debug[ \t]*agent[ /t ]*starting agent[ /t]*\([^(]*\)(\([^)]*\))[^=]*=\(\w[^/.]*\/\w[^/.]*\)\.\(\w[^,]*\)')
 
-" Fullscreen on Windows. Yay!
-nmap <silent><F11> :call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<cr>
-
 " Insert file name
 imap <Leader>fn <c-r>=expand('%:t:r')<cr>
 
 " Keep search matches in the middle of the window {{{2
 nnoremap n nzzzv
 nnoremap N Nzzzv
-"nnoremap * *zzzv
-"nnoremap # #zzzv
 nnoremap g* g*zzzv
 nnoremap g# g#zzzv
 
@@ -204,11 +197,6 @@ endif
 
 map <leader>g :GundoToggle<cr>
 
-" Markdown {{{2
-
-nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags<cr> 
-
-
 " csv {{{2
 
 let g:csv_nomap_j = 1
@@ -230,30 +218,8 @@ let g:ctrlp_open_multiple_files = '2vjr'
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
 
 map <leader>fb :CtrlPBuffer<cr>
-map <leader>ff :CtrlP<cr>
 map <leader>fr :CtrlP .<cr>
-map <leader>fm :CtrlPMixed<cr>
-map <leader>fd :CtrlPDir<cr>
-map <leader>fq :CtrlPQuickfix<cr>
-
-
-" CtrlSpace {{{2
-
-" TODO: May need to default unicode to 0 for windows
-" TODO: May need to switch off ruby for windows
-
-let g:ctrlspace_default_mapping_key = "<leader>\<space>"
-let g:ctrlspace_height = 3
-let g:ctrlspace_unicode_font = 1
-let g:ctrlspace_max_files = 750
-let g:ctrlspace_use_tabline = 1
-let g:ctrlspace_use_ruby_bindings = 0
-
-" Pretty status line
-hi CtrlSpaceSelected term=reverse ctermfg=187  ctermbg=23  cterm=bold
-hi CtrlSpaceNormal   term=NONE    ctermfg=244  ctermbg=232 cterm=NONE
-hi CtrlSpaceSearch   ctermfg=220  ctermbg=NONE cterm=bold
-hi CtrlSpaceStatus   ctermfg=230  ctermbg=234  cterm=NONE
+map <leader>fc :CtrlPClearAllCaches<cr>
 
 
 " ctags {{{2
@@ -272,8 +238,8 @@ let g:pymode_lint_cwindow = 0
 let g:pymode_quickfix_minheight = 6
 let g:pymode_quickfix_maxheight = 3
 let g:pymode_rope_complete_on_dot = 0
+let g:pymode_rope_completion = 0
 command RopeToggle let g:pymode_rope = g:pymode_rope ? 0 : 1
-"let g:pymode_rope_completion = 0
 
 " syntastic {{{2
 
@@ -325,6 +291,6 @@ let g:dbext_default_profile_django_book = 'type=MYSQL:user=WebDevUser:passwd=Web
 let g:dbext_default_profile_mysql_test = 'type=MYSQL:user=WebDevUser:passwd=WebDevUser:dbname=test:extra=-t'
 let g:dbext_default_profile_sqlexpress = 'type=SQLSRV:integratedLogin=1:srvname=<see Connection Properties, Server Name>:dbname=AdventureWorks:extra=-t'
 if filereadable(glob("~/.vimdb.local"))
-    " Add this file to a security repository
+    " Secure this file
     source ~/.vimdb.local
 endif

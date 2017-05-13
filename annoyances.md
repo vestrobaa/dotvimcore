@@ -4,7 +4,7 @@ Annoyances
 Grrr
 ----
 
-*   File navigation window keeps popping up, can't get rid of it
+*   File navigation window keeps popping up, can't get rid of it (was vinegar)
 *   Too much addins
 *   Pymode hinders as much as it helps
 *   Auto icloud
@@ -13,12 +13,12 @@ Grrr
 *   Fix the diff window settings
 *   Bite the bullet and switch to dbext
 *   Vim as script runner?
-*   Restart the vim twitter config
+*   Restart the vim twitter configuration
 
-Elusive goals
--------------
+Roadmap
+-------
 
 *   Golden ratio
-*   Focus views
+*   Focus writing
 *   Note taking like OneNote
 *   Keeping Vim fast and multi platform
